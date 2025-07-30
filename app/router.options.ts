@@ -5,7 +5,7 @@ export default <RouterConfig>{
     {
       name: 'sitemap',
       path: '/sitemap',
-      component: () => import('@/pages/sitemap').then(r => r.default || r),
+      component: () => import('@/pages/sitemap/ui/sitemap.vue').then(r => r.default || r),
     },
     {
       name: 'index',
