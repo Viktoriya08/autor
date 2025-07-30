@@ -15,7 +15,7 @@ export default <RouterConfig>{
     {
       name: 'documents',
       path: '/documents',
-      component: () => import('@/pages/documents').then(r => r.default || r),
+      component: () => import('@/pages/documents/ui/page-documents.vue').then(r => r.default || r),
       meta: {
         type: 'internal'
       }
@@ -23,14 +23,14 @@ export default <RouterConfig>{
     {
       name: 'payment',
       path: '/payment',
-      component: () => import('@/pages/payment').then(r => r.default || r),
+      component: () => import('@/pages/payment/ui/page-payment.vue').then(r => r.default || r),
       meta: {
       }
     },
     {
       name: 'contacts',
       path: '/contacts',
-      component: () => import('@/pages/contacts').then(r => r.default || r),
+      component: () => import('@/pages/contacts/ui/page-contacts.vue').then(r => r.default || r),
       meta: {
         type: 'internal'
       }
@@ -38,14 +38,14 @@ export default <RouterConfig>{
     {
       name: 'investments',
       path: '/investments',
-      component: () => import('@/pages/investments/').then(r => r.default || r),
+      component: () => import('@/pages/investments/ui/page-investments.vue').then(r => r.default || r),
       meta: {
       }
     },
     {
       name: 'news',
       path: '/news',
-      component: () => import('@/pages/news').then(r => r.default || r),
+      component: () => import('@/pages/news/ui/page-news.vue').then(r => r.default || r),
       meta: {
         type: 'internal'
       }
