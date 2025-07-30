@@ -1,0 +1,76 @@
+.link-share {
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  text-transform: uppercase;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+
+  &__icon {
+    @include square(rem(32));
+
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: inherit;
+    transition: color var(--trans-base), background-color var(--trans-base);
+  }
+
+  &__icon svg {
+    @include square(rem(16));
+
+    display: block;
+  }
+
+  &__text {
+    margin-left: rem(8);
+  }
+
+  // theme
+  &--white {
+    color: var(--txt-primary-steel);
+  }
+
+  &--white &__icon {
+    background-color: var(--bg-internal-surface-dusty-white);
+  }
+
+  &--yellow {
+    color: #5C463E;
+  }
+
+  &--yellow &__icon {
+    background-color: var(--btn-primary-dusty);
+  }
+
+  // sizes
+  &--m,
+  &--l {
+    @include text-caption-s;
+  }
+
+  &--m &__icon {
+    @include square(rem(32));
+  }
+
+  &--l &__icon {
+    @include square(rem(40));
+  }
+
+  // state
+  @include media(hover) {
+    &--white:hover  &__icon {
+      background-color: var(--txt-primary-steel);
+      color: var(--bg-internal-surface-dusty-white);
+    }
+
+    &--yellow:hover &__icon {
+      background-color: #5C463E;
+      color: var(--btn-primary-dusty);
+    }
+  }
+}

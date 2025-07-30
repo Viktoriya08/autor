@@ -1,0 +1,69 @@
+.card-construction {
+  padding: rem(32);
+  padding-left: 0;
+  position: relative;
+
+  &__img {
+    overflow: hidden;
+    aspect-ratio: 885/600;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--trans-base);
+    }
+  }
+
+  &__decor {
+    @include square(rem(40));
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-invert);
+    border-radius: 50%;
+
+    svg {
+      @include square(rem(16));
+
+      transition: transform var(--trans-base);
+    }
+  }
+
+  &__link {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+  }
+
+  @include media(hover) {
+    &:hover &__decor svg {
+      transform: rotate(90deg);
+    }
+
+    &:hover img {
+      transform: scale(1.05);
+    }
+  }
+
+  @include media(hd-after) {
+    padding: 0;
+    padding-bottom: rem(16);
+
+    &__img {
+      aspect-ratio: 720/440;
+    }
+  }
+
+  @include media(tablet-after) {
+    &__img {
+      aspect-ratio: 358/240;
+    }
+  }
+
+}

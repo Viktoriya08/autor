@@ -1,0 +1,150 @@
+.error-block {
+  // min-height: calc(100vh - var(--height-header));
+  min-height: calc(100vh);
+  color: var(--txt-primary-invert);
+  display: flex;
+  overflow: hidden;
+  padding-top: var(--height-header);
+
+  &__wrapper {
+    display: flex;
+    height: auto;
+    width: 100%;
+  }
+
+  &__body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  &__info {
+    @include font-size(280px, 218px);
+
+    font-weight: 400;
+    letter-spacing: letter-spacing(-8%, '%');
+    text-transform: uppercase;
+  }
+
+  &__title {
+    @include font-size(18px, 22px);
+
+    font-weight: 500;
+    letter-spacing: letter-spacing(2%, '%');
+    text-transform: uppercase;
+  }
+
+  &__bg-1 {
+    position: absolute;
+    left: calc(var(--padding-wrapper) / -1);
+    bottom: 0;
+    width: 25%;
+  }
+
+  &__bg-2 {
+    position: absolute;
+    right: calc(var(--padding-wrapper) / -1);
+    bottom: 0;
+    transform: scale(-1, 1);
+    width: 23%;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  &__bg-3 {
+    position: absolute;
+    right: -100%;
+    top: -40%;
+    width: rem(65);
+    height: rem(35);
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: rem(24);
+    align-items: center;
+    position: relative;
+  }
+
+  &__link {
+    margin-top: rem(16);
+  }
+
+  @include media(fullhd-after) {
+    &__bg-1 {
+      width: 35%;
+    }
+
+    &__bg-2 {
+      width: 35%;
+      right: calc(rem(-50) + var(--padding-wrapper) / -1);
+    }
+  }
+
+  @include media(hd-after) {
+    &__info {
+      @include font-size(200px, 156px);
+    }
+
+    &__content {
+      gap: rem(24);
+    }
+
+    &__btn {
+      margin-top: rem(16);
+    }
+
+    &__bg-3 {
+      right: -50%;
+      top: 10%;
+      width: rem(43);
+    }
+
+    &__bg-2 {
+      width: 44%;
+      right: calc(var(--padding-wrapper) / -1);
+    }
+
+    &__bg-1 {
+      width: 34%;
+    }
+  }
+
+  @include media(tablet-after) {
+    &__info {
+      @include font-size(156px, 122px);
+    }
+
+    &__title {
+      @include font-size(13px, 18px);
+    }
+
+    &__bg-3 {
+      right: 0%;
+      top: -40%;
+      width: rem(26);
+      height: rem(13);
+    }
+
+    &__bg-2 {
+      width: 48%;
+    }
+
+    &__bg-1 {
+      width: 44%;
+    }
+
+    &__link {
+      padding: rem(11) rem(20);
+    }
+  }
+}

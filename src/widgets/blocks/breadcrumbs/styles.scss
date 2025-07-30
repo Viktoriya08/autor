@@ -1,0 +1,110 @@
+.breadcrumbs {
+  &__list {
+    @include hide-scroll;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: rem(12);
+    overflow: auto;
+  }
+
+  &__link {
+    @include text-caption-xs;
+
+    text-transform: uppercase;
+    color: var(--txt-secondary-invert);
+    padding: rem(10) 0;
+    transition: opacity var(--trans-base);
+    width: fit-content;
+
+    // states
+    &:where(:focus-visible, :active) {
+      outline: none;
+      opacity: 0.5;
+    }
+  }
+
+  &__link-back {
+    @include text-caption-xs;
+
+    display: flex;
+    gap: rem(4);
+    align-items: center;
+    width: fit-content;
+    padding-block: rem(8);
+    padding-inline-end: rem(4);
+    text-transform: uppercase;
+    color: var(--primary-dark);
+
+    .theme-bronze & {
+      color: var(--c-sandy-brown-secondary);
+    }
+  }
+
+  &__icon {
+    @include square(rem(16));
+  }
+
+  &__text {
+    white-space: nowrap;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+
+    &:not(:last-child) {
+      gap: rem(12);
+
+      &::after {
+        @include text-caption-xs;
+
+        content: "/";
+        display: block;
+        color: var(--txt-secondary-invert);
+      }
+    }
+  }
+
+  &--light &__link {
+    color: var(--txt-secondary-blue-64);
+  }
+
+  &--light &__item {
+    &:not(:last-child)::after {
+      color: var(--txt-secondary-blue-64);
+    }
+  }
+
+
+  &__item:last-child &__link {
+    color: var(--primary-dark);
+    pointer-events: none;
+
+    .theme-bronze & {
+      color: var(--c-sandy-brown-secondary);
+    }
+  }
+
+  &--light &__item:last-child &__link {
+    color: var(--txt-primary);
+  }
+
+  @include media(hover) {
+    &__link:hover:where(:hover, :focus-visible) {
+      opacity: 0.5;
+    }
+  }
+
+  @include media(tablet-after) {
+    margin-left: calc(var(--padding-wrapper) * -1);
+    margin-right: calc(var(--padding-wrapper) * -1);
+
+    &__list {
+      flex-wrap: nowrap;
+      padding-left: var(--padding-wrapper);
+      padding-right: var(--padding-wrapper);
+    }
+  }
+}

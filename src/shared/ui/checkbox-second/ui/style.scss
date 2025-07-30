@@ -1,0 +1,75 @@
+.checkbox-second {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+
+  &__control {
+    @include square(rem(40));
+
+    border-radius: 50%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    align-items: center;
+    justify-items: center;
+    position: relative;
+  }
+
+  &__control::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    transition:
+      background-color var(--trans-base),
+      transform var(--trans-base);
+  }
+
+  &__control::before,
+  &__control input,
+  &__value {
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+
+  &__control input {
+    appearance: none;
+    display: block;
+    cursor: inherit;
+  }
+
+  &__value {
+    @include text-btn-m;
+
+    text-transform: uppercase;
+    position: relative;
+  }
+
+  // style
+  &--blue,
+  &--yellow {
+    color: var(--txt-primary-steel);
+  }
+
+  &--blue &__control::before {
+    background-color: var(--bg-internal-surface-pastel-light);
+  }
+
+  &--yellow &__control::before {
+    background-color: var(--bg-internal-page-dusty);
+  }
+
+  // state
+  @include media(hover) {
+    &:hover &__control::before {
+      transform: scale(calc(48 / 40));
+    }
+  }
+
+  &__control:has(:checked)::before {
+    background-color: var(--bg-internal-surface-dusty-white);
+  }
+}

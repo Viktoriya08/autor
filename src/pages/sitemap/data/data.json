@@ -1,0 +1,67 @@
+[
+  {
+    "key": "index",
+    "text": "Главная",
+    "href": "/"
+  },
+  {
+    "key": "documents",
+    "text": "Документы",
+    "href": "/documents"
+  },
+  {
+    "key": "payment",
+    "text": "Способы покупки",
+    "href": "/payment"
+  },
+  {
+    "key": "contacts",
+    "text": "Контакты",
+    "href": "/contacts"
+  },
+  {
+    "key": "investments",
+    "text": "Инвестиции",
+    "href": "/investments"
+  },
+  {
+    "key": "news",
+    "text": "Новости",
+    "href": "/news"
+  },
+  {
+    "key": "news-id",
+    "text": "Новость: \"внтурянка\"",
+    "href": "/news/test/"
+  },
+  {
+    "key": "construction",
+    "text": "Ход строительства",
+    "href": "/construction"
+  },
+  {
+    "key": "construction-inner",
+    "text": "Ход строительства: \"детальная\"",
+    "href": "/construction/february25/"
+  },
+  {
+    "key": "object",
+    "text": "Страница объекта",
+    "href": "/objects/1"
+  },
+  {
+    "key": "objects",
+    "text": "Выбор по параметрам",
+    "href": "/objects"
+  },
+  {
+    "key": "floors",
+    "text": "Визуальный выбор: \"дом\"",
+    "href": "/floors"
+  },
+  {
+    "key": "floor",
+    "text": "Визуальный выбор: \"этаж\"",
+    "href": "/floors/1"
+  }
+]

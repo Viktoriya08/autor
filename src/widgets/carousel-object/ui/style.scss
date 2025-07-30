@@ -1,0 +1,25 @@
+.carousel {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  justify-content: space-between;
+  align-items: center;
+  row-gap: rem(16);
+  padding: 0 var(--padding-wrapper);
+
+  &__title {
+    @include text-caption-m;
+
+    text-transform: uppercase;
+    color: var(--txt-primary-steel);
+  }
+
+  &__controls {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    column-gap: rem(4);
+  }
+
+  &__main {
+    grid-column: 1/-1;
+  }
+}

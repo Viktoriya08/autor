@@ -1,0 +1,30 @@
+.img-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  position: relative;
+
+  // theme
+  &--yellow {
+    background-color: var(--bg-internal-surface-dusty);
+    color: var(--txt-primary-steel);
+  }
+
+  // sizes
+  &--m {
+    @include square(rem(40));
+  }
+
+  &--m &__icon {
+    @include square(rem(16));
+  }
+
+  &--l {
+    @include square(rem(48));
+  }
+
+  &--l &__icon {
+    @include square(rem(20));
+  }
+}

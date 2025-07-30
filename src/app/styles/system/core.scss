@@ -1,0 +1,237 @@
+@use "./global/vars" as *;
+@use "./global/functions" as *;
+@use "./global/mix" as *;
+@use "./global/typography" as *;
+
+
+:root {
+  --padding-wrapper: #{rem(32px)};
+  --padding-decor: #{rem(220px)};
+  --scale-vw: calc(1920 / 100);
+  --height-header: #{rem(80)};
+
+  @each $name, $value in $colors {
+    --color-#{$name}: #{$value};
+  }
+
+  @each $name, $value in $trans {
+    --trans-#{$name}: #{$value};
+  }
+
+  @each $name, $shadow in $shadows {
+    --shadow-#{$name}: #{$shadow};
+  }
+
+  @each $name, $z in $zindex {
+    --z-#{$name}: #{$z};
+  }
+
+  @each $name, $value in $radius {
+    --radius-#{$name}: #{$value}px;
+  }
+
+  @include media(fullhd-after) {
+    --height-header: #{rem(64)};
+  }
+
+  @include media(hd-after) {
+    --padding-wrapper: #{rem(24px)};
+    --padding-decor: #{rem(200px)};
+  }
+
+  @include media(tablet-after) {
+    --padding-wrapper: #{rem(16px)};
+    --padding-decor: #{rem(120px)};
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  -ms-overflow-style: none;
+
+  /* IE and Edge */
+  scrollbar-width: none;
+
+  /* Firefox */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: auto !important;
+
+  // scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+html.not-smooth {
+  scroll-behavior: auto !important;
+}
+
+body {
+  @include text-body-primary;
+
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  min-height: 100dvh;
+  font-family: $font-primary;
+
+  // font-size: $font-base-size;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smooth: antialiased;
+
+  &.modal-open {
+    overflow: hidden;
+    padding-right: var(--scroll-width);
+  }
+}
+
+.page {
+  background-color: var(--body-color);
+
+  &.modal-open {
+    overflow: hidden;
+  }
+
+  @include media(tablet-after) {
+    &__core {
+      overflow: clip;
+    }
+  }
+}
+
+iframe,
+img,
+svg,
+video {
+  max-width: 100%;
+  display: block;
+}
+
+.wrapper {
+  padding: 0 var(--padding-wrapper);
+
+  &--s {
+    padding-left: calc(var(--padding-wrapper) * 2);
+    padding-right: calc(var(--padding-wrapper) * 2);
+  }
+
+  @include media(hd-after) {
+    &--s {
+      padding: 0 var(--padding-wrapper);
+    }
+  }
+}
+
+.wrap-sticky {
+  position: relative;
+  z-index: 3;
+
+  &__sticky {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+
+  &__next {
+    position: relative;
+    z-index: 2;
+    overflow: clip;
+  }
+
+  @include media(hd-after) {
+    &--desktop &__sticky {
+      position: initial;
+    }
+  }
+}
+
+.wrap-decor {
+  --size-mask: 190%;
+
+  position: relative;
+  overflow: clip;
+  padding: var(--padding-decor) 0;
+  z-index: 1;
+  margin-top: calc(var(--padding-decor) * -1);
+  margin-bottom: calc(var(--padding-decor) * -1);
+
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+    width: 125%;
+    height: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--bg-page-green);
+    z-index: -1;
+    mask-image: url('/image/mask/4.svg');
+    mask-repeat: no-repeat;
+  }
+
+  &::before {
+    top: 0;
+    mask-position: top center;
+    mask-size: max(20%, calc(var(--size-mask) * 1.9)) auto;
+  }
+
+  &::after {
+    bottom: 0;
+    mask-position: bottom center;
+    mask-size: max(50%, calc(var(--size-mask) * 1.9)) auto;
+  }
+
+  &__box {
+    background-color: var(--bg-page-green);
+  }
+
+  +section {
+    margin-top: var(--padding-decor);
+  }
+
+  &.wrap-sticky__next {
+    margin-bottom: var(--padding-decor);
+  }
+
+  &--brown::before,
+  &--brown::after,
+  &--brown &__box {
+    background-color: var(--bg-page-sand);
+  }
+
+  &__safe-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    z-index: -2;
+    background-color: var(--body-color);
+  }
+
+  &__safe-overlay--yellow {
+    background-color: var(--c-dusty-yellow-secondary);
+  }
+
+  &__safe-overlay--brown {
+    background-color: var(--bg-page-sand);
+  }
+}
+
+.wrap-color {
+  background-color: var(--bg-page-promo-dark);
+
+  &--gradient {
+    background: var(--gradient-second-turn);
+  }
+}

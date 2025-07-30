@@ -1,0 +1,192 @@
+[
+  {
+    "key": "news-section-1",
+    "date": "Февраль ‘25",
+    "newsList": [
+      {
+        "key": "news-1",
+        "badge": "Акции",
+        "title": "Новая акция: рассрочка 0% на квартиры в нашем ЖК",
+        "pic": {
+          "name": "1",
+          "path": "image/news",
+          "ext": "jpg",
+          "width": "284",
+          "height": "300",
+          "fallback": "1920"
+        },
+        "date": {
+          "num": "14",
+          "text": "февраля"
+        }
+      },
+      {
+        "key": "news-2",
+        "badge": "Новости",
+        "title": "Инфраструктура: что появится рядом с ЖК?",
+        "pic": {
+          "name": "2",
+          "path": "image/news",
+          "ext": "jpg",
+          "width": "284",
+          "height": "300",
+          "fallback": "1920"
+        },
+        "date": {
+          "num": "3",
+          "text": "февраля"
+        }
+      }
+    ]
+  },
+
+  {
+    "key": "news-section-2",
+    "date": "Январь ‘25",
+    "newsList": [
+      {
+        "key": "news-3",
+        "badge": "Новости",
+        "title": "Изменения в графике работы на выходные",
+        "pic": {
+          "name": "3",
+          "path": "image/news",
+          "ext": "jpg",
+          "width": "284",
+          "height": "300",
+          "fallback": "1920"
+        },
+        "date": {
+          "num": "30",
+          "text": "Января"
+        }
+      },
+      {
+        "key": "news-4",
+        "badge": "Премии",
+        "title": "Собрание по вопросам безопасности на объекте",
+        "pic": {
+          "name": "4",
+          "path": "image/news",
+          "ext": "jpg",
+          "width": "284",
+          "height": "300",
+          "fallback": "1920"
+        },
+        "date": {
+          "num": "21",
+          "text": "Января"
+        }
+      },
+      {
+        "key": "news-5",
+        "badge": "Новости",
+        "title": "Запуск нового этапа строительства",
+        "pic": {
+          "name": "5",
+          "path": "image/news",
+          "ext": "jpg",
+          "width": "284",
+          "height": "300",
+          "fallback": "1920"
+        },
+        "date": {
+          "num": "13",
+          "text": "Января"
+        }
+      },
+      {
+        "key": "news-6",
+        "badge": "Новости",
+        "title": "На территории жК открылся новый магазин с приборами",
+        "pic": {
+          "name": "6",
+          "path": "image/news",
+          "ext": "jpg",
+          "width": "284",
+          "height": "300",
+          "fallback": "1920"
+        },
+        "date": {
+          "num": "9",
+          "text": "Января"
+        }
+      },
+      {
+        "key": "news-7",
+        "badge": "Акции",
+        "title": "Новая акция: рассрочка 0% на квартиры в нашем ЖК",
+        "pic": {
+          "name": "7",
+          "path": "image/news",
+          "ext": "jpg",
+          "width": "284",
+          "height": "300",
+          "fallback": "1920"
+        },
+        "date": {
+          "num": "2",
+          "text": "Января"
+        }
+      }
+    ]
+  },
+
+  {
+    "key": "news-section-3",
+    "date": "декабрь ‘24",
+    "newsList": [
+      {
+        "key": "news-8",
+        "badge": "Новости",
+        "title": "Обсуждение результатов года",
+        "pic": {
+          "name": "8",
+          "path": "image/news",
+          "ext": "jpg",
+          "width": "284",
+          "height": "300",
+          "fallback": "1920"
+        },
+        "date": {
+          "num": "31",
+          "text": "декабря"
+        }
+      },
+      {
+        "key": "news-9",
+        "badge": "Новости",
+        "title": "Анонс новых проектов на 2025 год",
+        "pic": {
+          "name": "9",
+          "path": "image/news",
+          "ext": "jpg",
+          "width": "284",
+          "height": "300",
+          "fallback": "1920"
+        },
+        "date": {
+          "num": "19",
+          "text": "декабря"
+        }
+      },
+      {
+        "key": "news-10",
+        "badge": "Новости",
+        "title": "Изменения в политике обработки данных компании",
+        "pic": {
+          "name": "10",
+          "path": "image/news",
+          "ext": "jpg",
+          "width": "284",
+          "height": "300",
+          "fallback": "1920"
+        },
+        "date": {
+          "num": "5",
+          "text": "декабря"
+        }
+      }
+    ]
+  }
+]

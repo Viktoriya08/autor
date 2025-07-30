@@ -1,0 +1,72 @@
+.btn-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: rem(4);
+  background: none;
+  border: 0;
+  outline: 0;
+  padding: 0;
+  margin: 0;
+  box-shadow: none;
+  text-transform: uppercase;
+  transition: color var(--trans-base), opacity var(--trans-base);
+  user-select: none;
+  cursor: pointer;
+
+  &[disabled],
+  &.is-disabled {
+    pointer-events: none;
+    cursor: default;
+    opacity: 0.4;
+  }
+
+  &__icon {
+    display: flex;
+    width: var(--size-icon, 1rem);
+    height: var(--size-icon, 1rem);
+  }
+
+  // size
+  &--m {
+    @include text-btn-m;
+
+    padding: rem(8) 0;
+  }
+
+  &--s {
+    @include text-btn-s;
+
+    --size-icon: 0.875rem;
+
+    padding: rem(9) 0;
+  }
+
+  // style
+  &--pastel {
+    color: var(--txt-primary-pastel);
+  }
+
+  &--dark {
+    color: var(--txt-primary-steel);
+  }
+
+  &--second-steel {
+    color: var(--txt-tertiary-steel);
+  }
+
+  // state
+  @include media(hover) {
+    &--pastel:not(.is-disabled, [disabled]):hover {
+      color: var(--txt-second-pastel);
+    }
+
+    &--dark:not(.is-disabled, [disabled]):hover {
+      color: var(--txt-tertiary-steel);
+    }
+
+    &--second-steel:not(.is-disabled, [disabled]):hover {
+      color: var(--txt-primary-steel);
+    }
+  }
+}

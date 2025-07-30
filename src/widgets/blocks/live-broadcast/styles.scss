@@ -1,0 +1,123 @@
+.live-video {
+  position: relative;
+
+  &__video {
+    position: absolute;
+    inset: 0;
+
+    img, iframe {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: rem(200);
+      background: var(--gradient-shadow-black);
+    }
+  }
+
+  &__tabs {
+    position: relative;
+    z-index: 1;
+    padding-top: rem(32);
+    padding-left: var(--padding-wrapper);
+    padding-right: var(--padding-wrapper);
+    overflow: auto;
+  }
+}
+
+.tabs-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: rem(2);
+  flex-wrap: wrap;
+
+  &__img-box {
+    width: rem(44);
+    height: rem(44);
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid var(--btn-bg-white);
+    opacity: 0.5;
+    transition: opacity var(--trans-base);
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__name {
+    @include text-caption-s;
+
+    text-transform: uppercase;
+    color: var(--txt-primary);
+    opacity: 0.5;
+    transition: opacity var(--trans-base), color var(--trans-base);
+  }
+
+  &__btn {
+    @include btn-reset;
+
+    border-radius: var(--radius-xxl);
+    display: flex;
+    align-items: center;
+    gap: rem(4);
+    min-height: rem(48);
+    padding-right: rem(20);
+    background: rgb(217 234 249 / 0.06);
+    transition: background var(--trans-base);
+    backdrop-filter: blur(16px);
+
+    &.is-active {
+      background: var(--primary-tabs);
+
+      .tabs-img__name,
+      .tabs-img__img-box {
+        opacity: 1;
+        color: var(--txt-primary-invert);
+      }
+    }
+  }
+
+  @include media(hover) {
+    &__btn:not(.is-active):where(:hover, :focus-visible) &__img-box{
+      opacity: 1;
+    }
+
+    &__btn:not(.is-active):where(:hover, :focus-visible) &__name{
+      opacity: 1;
+      color: var(--txt-primary-invert);
+    }
+
+    &__btn:not(.is-active):where(:hover, :focus-visible){
+      background: var(--primary-tabs);
+    }
+  }
+
+  @include media(tablet-after) {
+    &__btn {
+      padding-right: 0;
+      min-height: auto;
+    }
+
+    &__name {
+      display: none;
+    }
+
+    &__img-box {
+      width: rem(36);
+      height: rem(36);
+      border-color: var(--bd-tertiary-blue-trans-18);
+    }
+  }
+
+}

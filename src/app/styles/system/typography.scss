@@ -1,0 +1,244 @@
+@use './global/typography' as *;
+@use './global/mix' as *;
+
+/*
+---------------------------------
+figma -> front
+----------------------------------
+
+headings
+----------------------------------
+нет в ui       -> heading--xl
+нет в ui       -> heading--lg
+page           -> heading--md
+primary-accent -> heading--accent
+
+section        -> title--md
+section-accent -> title--accent
+
+block          -> subtitle--md
+block-small    -> subtitle--sm
+block-accent   -> subtitle--accent
+----------------------------------
+
+body
+----------------------------------
+primary        -> text--md
+secondary      -> text--sm
+
+caption        -> text--caption
+small-caption  -> text--caption-sm
+----------------------------------
+
+caption
+----------------------------------
+xxxl           -> caption--xxxl
+xxl            -> caption--xxl
+xl             -> caption--xl
+m              -> caption--m
+s              -> caption--sm
+нет в ui       -> caption--xs
+----------------------------------
+*/
+
+.heading {
+  &--xl {
+    @include title-page-xl;
+  }
+
+  // для заголовка в Hero(в ui нет, в макете есть)
+  &--lg {
+    @include title-page-lg;
+  }
+
+  &--md {
+    @include title-page;
+  }
+
+  &--accent {
+    @include title-primary-accent;
+  }
+}
+
+.title {
+  &--md {
+    @include title-section;
+  }
+
+  &--accent {
+    @include title-section-accent;
+  }
+
+  &--xl {
+    @include title-page-xl;
+  }
+
+  &--page {
+    @include title-page;
+
+    @include media(fullhd-after) {
+      @include font-size(96px, 90px);
+    }
+
+    @include media(hd-after) {
+      @include font-size(64px, 60px);
+    }
+
+    @include media(tablet-after) {
+      @include font-size(36px, 34px);
+    }
+  }
+
+  &--subtitle {
+    text-transform: uppercase;
+    @include text-caption-xl;
+
+    @include media(tablet-after) {
+      @include block;
+    }
+  }
+}
+
+.subtitle {
+  &--md {
+    @include block;
+  }
+
+  &--sm {
+    @include block-small;
+
+    text-transform: uppercase;
+  }
+
+  &--accent {
+    @include block-accent;
+  }
+}
+
+.text {
+  &--md {
+    @include text-body-primary;
+  }
+
+  &--sm {
+    @include text-body-secondary;
+  }
+
+  &--caption {
+    @include text-body-caption;
+  }
+
+  &--caption-sm {
+    @include text-body-caption-sm;
+  }
+}
+
+.caption {
+  &--xxxl {
+    @include text-caption-xxxl;
+  }
+
+  &--xxl {
+    @include text-caption-xxl;
+  }
+
+  &--xl {
+    @include text-caption-xl;
+
+    text-transform: uppercase;
+    @include media(tablet-after) {
+      @include font-size(16px, 20px);
+    }
+  }
+
+  &--md {
+    @include text-caption-m;
+
+    text-transform: uppercase;
+  }
+
+  &--sm {
+    @include text-caption-s;
+
+    text-transform: uppercase;
+  }
+
+  &--xs {
+    @include text-caption-xs;
+
+    text-transform: uppercase;
+  }
+
+  &--xxs {
+    @include font-size(10px, 11px);
+
+    font-weight: 600;
+    letter-spacing: letter-spacing(-4%, '%');
+  }
+}
+
+// decor
+.underline {
+  position: relative;
+}
+
+.underline--primary-1::after,
+.underline--primary-2::after,
+.underline--primary-3::after,
+.underline--primary-4::after,
+.underline--second-1::after,
+.underline--second-2::after,
+.underline--second-3::after {
+  content: '';
+  width: 100%;
+  height: auto;
+  bottom: -2px;
+  left: 0;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.underline--primary-1::after {
+  aspect-ratio: 143/4;
+  background-image: url("data:image/svg+xml,%3Csvg width='145' height='4' viewBox='0 0 145 4' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M144 1C114.067 1.32869 84.1263 1.17322 54.2037 1.48889C42.6867 1.61039 31.68 2.02654 20.5 2.91111C17.3592 3.15962 2.16953 2.13635 0.999995 3' stroke='%233B576B' stroke-width='1.2' stroke-linecap='round'/%3E%3C/svg%3E%0A");
+
+}
+
+.underline--primary-2::after {
+  aspect-ratio: 102/4;
+  background-image: url("data:image/svg+xml,%3Csvg width='104' height='4' viewBox='0 0 104 4' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.98308C26.2092 1.98308 51.5912 -0.685572 76.7752 2.77086C80.6659 3.30485 84.3942 2.88057 88.2403 1.758C91.9303 0.681024 95.4673 2.89691 99.1783 2.99594C100.55 3.03256 101.734 1.98308 103 1.98308' stroke='%233B576B' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E%0A");
+}
+
+.underline--primary-3::after {
+  aspect-ratio: 217/4;
+  background-image: url("data:image/svg+xml,%3Csvg width='219' height='4' viewBox='0 0 219 4' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M218 2.59091C198.235 2.13583 175.143 1.37597 155.321 2.15909C140.021 2.76354 125.164 3 109.75 3C95.2158 3 81.2304 2.24174 66.7803 1.81818C56.6206 1.52038 47.0293 2.89548 37.0166 2.40909C31.7203 2.15181 25.6909 1 20.459 1C19.3289 1 17.5354 1.70418 16.3071 1.86364C12.1476 2.40358 10.4599 2.18182 6.40249 2.18182C4.22573 2.18182 2.93489 1.30273 0.999999 2.18182' stroke='%233B576B' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E ");
+}
+
+.underline--primary-4::after {
+  aspect-ratio: 308/4;
+  background-image: url("data:image/svg+xml,%3Csvg width='308' height='3' viewBox='0 0 308 3' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 2C12.8172 2 23.8839 1.35674 35.3923 1.06266C50.5193 0.676102 65.1662 2.21543 80.2462 1.94486C112.84 1.36007 144.809 2 177.408 2C220.605 2 263.803 2 307 2' stroke='%233B576B' stroke-width='1.2' stroke-linecap='round'/%3E%3C/svg%3E");
+}
+
+.underline--second-1::after {
+  aspect-ratio: 147/6;
+  background-image: url("data:image/svg+xml,%3Csvg width='149' height='6' viewBox='0 0 149 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M148 1.86301C139.465 2.53146 131.922 1.45545 123.331 1.86301C120.461 1.99919 116.836 3.02615 113.992 2.53146C110.706 1.9599 109.222 2.11396 105.4 2.99102C101.888 3.79687 101.293 3.30195 98.0348 2.57324C90.3445 0.853216 80.4426 0.785549 72.5246 1.23634C54.6883 2.2518 37.0236 4.82926 19.0493 4.82926C17.0811 4.82926 0.519947 5.21343 1.0107 4.82926' stroke='%23E4C1A4' stroke-width='1.2' stroke-linecap='round'/%3E%3C/svg%3E ");
+
+  // background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQ5IiBoZWlnaHQ9IjYiIHZpZXdCb3g9IjAgMCAxNDkgNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE0OCAxLjg2MzAxQzEzOS40NjUgMi41MzE0NiAxMzEuOTIyIDEuNDU1NDUgMTIzLjMzMSAxLjg2MzAxQzEyMC40NjEgMS45OTkxOSAxMTYuODM2IDMuMDI2MTUgMTEzLjk5MiAyLjUzMTQ2QzExMC43MDYgMS45NTk5IDEwOS4yMjIgMi4xMTM5NiAxMDUuNCAyLjk5MTAyQzEwMS44ODggMy43OTY4NyAxMDEuMjkzIDMuMzAxOTUgOTguMDM0OCAyLjU3MzI0QzkwLjM0NDUgMC44NTMyMTYgODAuNDQyNiAwLjc4NTU0OSA3Mi41MjQ2IDEuMjM2MzRDNTQuNjg4MyAyLjI1MTggMzcuMDIzNiA0LjgyOTI2IDE5LjA0OTMgNC44MjkyNkMxNy4wODExIDQuODI5MjYgMC41MTk5NDcgNS4yMTM0MyAxLjAxMDcgNC44MjkyNiIgc3Ryb2tlPSIjNUM0NjNFIiBzdHJva2Utd2lkdGg9IjEuMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+Cjwvc3ZnPgo=");
+}
+
+.underline--second-2::after {
+  aspect-ratio: 148/4;
+  background-image: url("data:image/svg+xml,%3Csvg width='150' height='4' viewBox='0 0 150 4' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.67789C17.7171 1.67789 34.2577 1.67789 50.9267 1.67789C54.8944 1.67789 57.8224 1.83323 61.4658 2.82654C63.4629 3.37102 64.3032 2.46816 66.1279 2.37462C70.9097 2.12948 75.8848 2.35579 80.6793 2.35579C91.2827 2.35579 102.172 2.02144 112.721 1.33895C116.98 1.06336 121.168 1 125.435 1C129.555 1 133.408 1.86496 137.5 1.99801C141.476 2.12725 145.237 1 149 1' stroke='%23E4C1A4' stroke-width='1.2' stroke-linecap='round'/%3E%3C/svg%3E%0A");
+
+  // background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUwIiBoZWlnaHQ9IjQiIHZpZXdCb3g9IjAgMCAxNTAgNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEgMS42Nzc4OUMxNy43MTcxIDEuNjc3ODkgMzQuMjU3NyAxLjY3Nzg5IDUwLjkyNjcgMS42Nzc4OUM1NC44OTQ0IDEuNjc3ODkgNTcuODIyNCAxLjgzMzIzIDYxLjQ2NTggMi44MjY1NEM2My40NjI5IDMuMzcxMDIgNjQuMzAzMiAyLjQ2ODE2IDY2LjEyNzkgMi4zNzQ2MkM3MC45MDk3IDIuMTI5NDggNzUuODg0OCAyLjM1NTc5IDgwLjY3OTMgMi4zNTU3OUM5MS4yODI3IDIuMzU1NzkgMTAyLjE3MiAyLjAyMTQ0IDExMi43MjEgMS4zMzg5NUMxMTYuOTggMS4wNjMzNiAxMjEuMTY4IDEgMTI1LjQzNSAxQzEyOS41NTUgMSAxMzMuNDA4IDEuODY0OTYgMTM3LjUgMS45OTgwMUMxNDEuNDc2IDIuMTI3MjUgMTQ1LjIzNyAxIDE0OSAxIiBzdHJva2U9IiM1QzQ2M0UiIHN0cm9rZS13aWR0aD0iMS4yIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9zdmc+Cg==");
+}
+
+.underline--second-3::after {
+  aspect-ratio: 260/5;
+  background-image: url("data:image/svg+xml,%3Csvg width='263' height='5' viewBox='0 0 263 5' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.25 2.3046C21.915 2.43813 42.2362 2.68682 62.7683 3.02713C77.17 3.26583 91.3003 2.42161 105.559 2.57916C116.514 2.70021 127.071 3.34504 138.201 3.34504C149.216 3.34504 160.393 3.85655 171.262 3.22943C183.341 2.53252 195.243 1.78438 207.671 1.78438C215.407 1.78438 222.614 1.11398 230.217 1.01851C233.929 0.971904 237.648 1.0314 241.359 1.00406C244.633 0.979943 248.071 1.78437 251.25 1.78437L261.75 1.00406' stroke='%23E4C1A4' stroke-linecap='round'/%3E%3C/svg%3E%0A");
+}
+
+/*
+- параматры шрифта для .subtitle/block (заголовок перед формой)?
+*/

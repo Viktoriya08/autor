@@ -1,0 +1,16 @@
+[
+  {
+    "type": "prev",
+    "href": "/#",
+    "name": "август",
+    "year": "2024",
+    "img": "/image/construction/3-1536.jpg"
+  },
+  {
+    "type": "next",
+    "href": "/#",
+    "name": "октябрь",
+    "year": "2024",
+    "img": "/image/construction/1-1536.jpg"
+  }
+]

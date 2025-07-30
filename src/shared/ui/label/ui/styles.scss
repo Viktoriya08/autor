@@ -1,0 +1,47 @@
+.label {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  align-items: center;
+  text-transform: uppercase;
+
+  &__icon {
+    @include square(rem(40));
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+  }
+
+  &__icon .icon {
+    @include square(rem(16));
+  }
+
+  // theme
+  &--yellow,
+  &--white {
+    color: var(--txt-primary-steel);
+  }
+
+  &--yellow &__icon {
+    background-color: var(--bg-internal-surface-dusty);
+  }
+
+  &--white &__icon {
+    background-color: var(--bg-internal-surface-dusty-white);
+  }
+
+  // sizes
+  &--m {
+    @include text-btn-m;
+  }
+
+  &--m &__icon {
+    margin-right: rem(8);
+  }
+
+  &--m &__icon .icon {
+    @include square(rem(16));
+  }
+
+}

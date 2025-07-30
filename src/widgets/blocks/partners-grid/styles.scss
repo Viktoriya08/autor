@@ -1,0 +1,35 @@
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-flow: row dense;
+  gap: 1px;
+
+  &__elem {
+    background-color: var(--primary-green-dark);
+    aspect-ratio: 1/1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: rem(18);
+  }
+
+  &__img-box {
+    max-width: rem(170);
+  }
+
+  // @include media(fullhd-after) {
+  //   grid-template-columns: repeat(auto-fit, minmax(rem(327), 1fr));
+  // }
+
+  // @include media(hd-after) {
+  //   grid-template-columns: repeat(auto-fit, minmax(rem(178), 1fr));
+  // }
+
+  @include media(tablet-after) {
+    grid-template-columns: repeat(2, 1fr);
+
+    &__img-box {
+      max-width: 80%;
+    }
+  }
+}

@@ -1,0 +1,61 @@
+// Base
+$width: 1920;
+$width-sm: 688;
+$width-modal: 830;
+$url-img: '../img/bg';
+
+
+// Colors
+$colors: (
+);
+
+// Transitions (https://easings.net/ru)
+$trans: (
+  'fast': 0.1s ease,
+  'base': 0.3s ease,
+  'long': 0.5s ease,
+  'btn': 0.8s cubic-bezier(0.25, 0.74, 0.22, 0.99),
+  '2': 1.5s cubic-bezier(0, 0, 0, 1),
+  // '2': 1.5s ease,
+);
+$shadows: (
+  'block': '0 0 1px #000'
+);
+$zindex: (
+  'modal': 70,
+  'header': 69,
+  'menu': 68,
+  'toast': 80
+);
+$radius: (
+  'xs': 16,
+  's': 40,
+  'm': 72,
+  'l': 90,
+  'xl': 96,
+  'xxl': 100
+);
+
+// Fonts
+$font-primary: 'Avenir Next', monospace;
+
+// Font-settings
+$font-base-size: 16px;
+
+// Media
+$media-fullhd: 1920px;
+$media-quadhd: 1440px;
+$media-hd: 1280px;
+$media-desktop: 1024px;
+$media-notebook: 960px;
+$media-tablet: 768px;
+$media-smartphone: 620px;
+$media-phone: 480px;
+$media-last: 375px;
+
+// Scale steps
+$scale-fullhd: 1920px; // 1920px
+
+// Retina
+$retina-dpi: 144dpi;
+$retina-dppx: 1.5dppx;

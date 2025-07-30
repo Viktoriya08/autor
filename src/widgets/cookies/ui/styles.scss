@@ -1,0 +1,100 @@
+.cookies {
+  position: fixed;
+  right: var(--padding-wrapper);
+  bottom: rem(32);
+  z-index: 67;
+  max-width: calc(100% - (var(--padding-wrapper) * 2));
+
+  &__box {
+    display: flex;
+    gap: rem(12);
+    border-radius: var(--radius-l);
+    backdrop-filter: blur(20px);
+    position: relative;
+    transition: color var(--trans-base), background-color var(--trans-base);
+  }
+
+  &__box::before {
+    content: '';
+    border-width: 1px;
+    border-style: solid;
+    border-radius: inherit;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: border-color var(--trans-base);
+  }
+
+  &__text,
+  &__btn {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__text {
+    @include text-caption-s;
+
+    max-width: rem(350);
+    padding: rem(10) 0 rem(10) rem(16);
+    transition: color var(--trans-base);
+  }
+
+  &__text .link-base {
+    text-transform: initial;
+  }
+
+  &--dark &__box {
+    color: var(--txt-primary-steel);
+    background-color: var(--bg-page-blured-pastel);
+  }
+
+  &--dark &__box::before {
+    border-color: var(--bd-tertiary-steel);
+    gap: rem(12);
+    border-width: 1px;
+    border-style: solid;
+    border-radius: var(--radius-l);
+    backdrop-filter: blur(20px);
+  }
+
+  &--blue &__box {
+    color: var(--txt-primary-pastel);
+    background-color: var(--bg-page-blured-pastel);
+    border-color: var(--bd-tertiary-pastel);
+  }
+
+  &--blue &__box::before {
+    border-color: var(--bd-tertiary-pastel);
+  }
+
+  &--bronze &__box {
+    color: var(--txt-second-sandy);
+    border-color: var(--bd-primary-bronze);
+    background-color: var(--bg-page-card-dusty);
+  }
+
+  &--bronze &__box::before {
+    border-color: var(--bd-primary-bronze);
+  }
+
+  &--yellow &__box {
+    color: var(--txt-primary-dusty);
+    border-color: var(--bd-tertiary-steel);
+    background-color: var(--bg-page-card-dusty);
+  }
+
+  &--yellow &__box::before {
+    border-color: var(--bd-tertiary-pastel);
+  }
+}
+
+.v-enter-active,
+.v-leave-active {
+  transition: all 0.3s cubic-bezier(.31, .48, .9, .59) 0.1s;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+  transform: translateX(calc(100% + var(--padding-wrapper)));
+}

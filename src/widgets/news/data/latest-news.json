@@ -1,0 +1,22 @@
+{
+  "date": {
+    "num": "22",
+    "text": "февраля"
+  },
+  "newsCard": {
+    "badge": "Новости",
+    "title": "Запуск нового этапа строительства: актуальные сроки и планы",
+    "pic": {
+      "name": "latest",
+      "path": "image/news",
+      "ext": "jpg",
+      "width": "918",
+      "height": "480",
+      "fallback": "1920",
+      "sources": [
+        {"size": 390, "media": "(max-width: 767px)"},
+        {"size": 768, "media": "(max-width: 1279px)"}
+      ]
+    }
+  }
+}

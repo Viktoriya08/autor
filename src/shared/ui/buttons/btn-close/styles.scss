@@ -1,0 +1,109 @@
+.btn-close {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  vertical-align: middle;
+  border: none;
+  border-radius: 50%;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+  transition:
+    transform var(--trans-base),
+    color var(--trans-base);
+  user-select: none;
+
+  &__icon {
+    display: flex;
+    width: var(--size-icon, 1rem);
+    height: var(--size-icon, 1rem);
+    position: relative;
+  }
+
+  &__icon svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    transform: scale(0);
+    transition: transform var(--trans-base), background-color var(--trans-base);
+  }
+
+  // size
+  &--s {
+    width: rem(36);
+    height: rem(36);
+  }
+
+  &--m {
+    width: rem(40);
+    height: rem(40);
+  }
+
+  &--l {
+    width: rem(48);
+    height: rem(48);
+  }
+
+  &--xl {
+    width: rem(56);
+    height: rem(56);
+  }
+
+  // style
+  &--blue,
+  &--yellow {
+    color: var(--icon-primary-steel);
+    background-color: var(--bg-internal-card-dusty);
+  }
+
+  &--blue::before {
+    background-color: var(--btn-primary-pastel);
+  }
+
+  &--yellow::before {
+    background-color: var(--btn-primary-dusty);
+  }
+
+  // states
+  &:disabled,
+  &.is-disabled {
+    cursor: default;
+    opacity: 0.32;
+    pointer-events: none;
+  }
+
+  // state
+  @include media(hover) {
+    &:hover {
+      transform: rotateZ(-90deg);
+    }
+
+    &:hover::before {
+      transform: scale(calc(56 / 48));
+    }
+
+    &--yellow:hover {
+      color: var(--icon-primary-sandy);
+    }
+
+    &--blue:hover::before {
+      background-color: var(--c-pastel-blue-10);
+    }
+
+    &--yellow:hover::before {
+      background-color: var(--btn-internal-hover-primary-dusty);
+    }
+  }
+}

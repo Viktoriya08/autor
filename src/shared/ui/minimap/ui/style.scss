@@ -1,0 +1,99 @@
+.minimap {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: rem(190);
+
+  &__home {
+    width: 100%;
+    justify-self: center;
+    margin-top: 8px;
+  }
+
+  svg > g {
+    opacity: 1 !important;
+  }
+
+  svg > g:first-child > path {
+    opacity: 0.5
+  }
+
+  svg > g:first-child > path:global(.is-active) {
+    opacity: 1;
+  }
+}
+
+.tooltip {
+  @include square(rem(24));
+
+  position: relative;
+  cursor: pointer;
+
+  &--left {
+    justify-self: start;
+    margin-left: 10px;
+  }
+
+  &--right {
+    justify-self: end;
+    margin-right: 0;
+  }
+
+  &__icon {
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__icon svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__popup {
+    @include text-btn-s;
+
+    border-radius: rem(100);
+    padding: rem(5) rem(10);
+    background-color: var(--bg-internal-surface-dusty);
+    position: absolute;
+    bottom: calc(100% + rem(10));
+    left: 50%;
+    transform: translateX(-50%);
+    text-transform: uppercase;
+    color: var(--txt-primary-steel);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    transition: opacity var(--trans-base), transform var(--trans-base);
+    pointer-events: none;
+  }
+
+  &:hover &__popup {
+    opacity: 1;
+    transform: translateX(-50%) translateY(rem(-4));
+  }
+
+  &__popup::after {
+    content: '';
+    display: block;
+    width: rem(16);
+    height: rem(10);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='10' viewBox='0 0 16 10' fill='none'%3E%3Cpath d='M4.29442 3.07536C3.31397 1.9827 2.07554 1.16157 0.695923 0.689453H15.3041C13.9245 1.16157 12.686 1.9827 11.7056 3.07536C10.7252 4.16802 10.035 5.49622 9.70025 6.93468L9.36913 8.22769C9.30747 8.5496 9.13813 8.83995 8.8898 9.04966C8.64146 9.25937 8.32937 9.37553 8.00636 9.37844C7.68117 9.37851 7.36608 9.26373 7.11512 9.05377C6.86416 8.84381 6.69298 8.55177 6.6309 8.22769L6.29975 6.93468C5.96499 5.49622 5.27486 4.16802 4.29442 3.07536Z' fill='%23F4E9DE'/%3E%3C/svg%3E");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: calc(100% - 1px);
+  }
+}
+
+@include media(tablet-after) {
+  .minimap {
+    width: rem(160);
+  }
+
+  .tooltip {
+    @include square(rem(16));
+  }
+}

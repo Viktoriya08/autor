@@ -1,0 +1,181 @@
+.decor-price {
+  position: relative;
+  color: var(--txt-primary-invert);
+  overflow: hidden;
+  border-top: 1px solid var(--bd-tertiary-trans-16);
+
+  &__wrapper {
+    min-height: rem(520);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-page-blue);
+  }
+
+  &__content {
+    width: fit-content;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  &__bg-1 {
+    position: absolute;
+    left: 0;
+    bottom: -60px;
+    width: rem(460);
+  }
+
+  &__bg-2 {
+    position: absolute;
+    bottom: rem(-80);
+    right: 0;
+    transform: scale(-1, 1);
+    width: rem(460);
+  }
+
+  &__bg-3 {
+    position: absolute;
+    top: -50%;
+    right: -60%;
+    transform: rotate(10deg)
+  }
+
+  &__title {
+    @include text-caption-m;
+
+    text-transform: uppercase;
+  }
+
+  &__price {
+    @include font-size(220px, 165px);
+
+    font-weight: 400;
+    letter-spacing: letter-spacing(-8%, '%');
+    text-transform: uppercase;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain
+  }
+
+  &--oval {
+    --size-mask: 190%;
+
+    border-top: none;
+    padding-top: var(--padding-decor);
+    z-index: 1;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 125%;
+      height: rem(530);
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: var(--bg-page-blue);
+      z-index: -1;
+      mask-position: top center;
+      mask-size: max(20%, calc(var(--size-mask) * 1.9)) auto;
+      mask-image: url("/image/mask/4.svg");
+      mask-repeat: no-repeat;
+    }
+  }
+
+  &--oval &__wrapper {
+    min-height: 40vh;
+  }
+
+  @include media(fullhd-after) {
+    &__bg-1 {
+      bottom: rem(-60);
+    }
+
+    &__bg-2 {
+      bottom: 0;
+      right: rem(-70);
+    }
+  }
+
+
+  @include media(hd-after) {
+    &__price {
+      @include font-size(140px, 109px);
+    }
+
+    &__bg-1 {
+      width: 25%;
+      bottom: rem(-30);
+      left: rem(-35);
+    }
+
+    &__bg-2 {
+      width: 27%;
+      right: rem(-20);
+    }
+
+    &__bg-3 {
+      width: rem(30);
+      top: rem(-30);
+    }
+
+    &__wrapper {
+      min-height: rem(310);
+    }
+
+    &--oval {
+      padding-top: rem(100);
+
+      &::before {
+        height: rem(380);
+      }
+    }
+
+    &--oval &__wrapper {
+      min-height: rem(310);
+    }
+  }
+
+  @include media(tablet-after) {
+    &__title {
+      @include text-caption-s;
+    }
+
+    &__price {
+      @include font-size(72px, 56px);
+    }
+
+    &__bg-3 {
+      right: rem(-40);
+    }
+
+    &__bg-2 {
+      width: 30%;
+      right: 0;
+    }
+
+    &__bg-1 {
+      width: 40%;
+      left: 0;
+    }
+
+    &__wrapper {
+      min-height: rem(256);
+    }
+
+    &--oval {
+      &::before {
+        height: rem(280);
+      }
+    }
+
+    &--oval &__wrapper {
+      align-items: flex-start;
+      min-height: rem(200);
+    }
+  }
+
+}

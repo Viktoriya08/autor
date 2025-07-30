@@ -1,0 +1,25 @@
+.form {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: rem(32);
+  position: relative;
+}
+
+.group-input {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: rem(8);
+
+  &__title {
+    @include text-caption-xs;
+
+    text-transform: uppercase;
+    color: var(--txt-tertiary-steel);
+  }
+
+  &__inputs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem(8);
+  }
+}

@@ -1,0 +1,112 @@
+@import "@vueform/slider/themes/default.css";
+
+.range {
+  width: 100%;
+  border-radius: rem(40);
+  border-style: solid;
+  border-width: 1px;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  justify-content: space-between;
+  padding: rem(17) rem(24);
+  position: relative;
+
+  &__value {
+    @include text-btn-m;
+
+    display: flex;
+    text-transform: uppercase;
+  }
+
+  &__value-result {
+    margin-left: rem(4);
+  }
+
+  &__slider {
+    --slider-height: 1px;
+    --slider-bg: transparent;
+
+    grid-column: 1/-1;
+    width: 100%;
+    position: absolute;
+    bottom: calc(var(--slider-height) * -1);
+  }
+
+  .slider-handle {
+    box-shadow: none;
+    transition: transform var(--trans-base);
+  }
+
+  .slider-touch-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .slider-touch-area::before {
+    @include square(4px);
+
+    content: '';
+    border-radius: 50%;
+    display: block;
+    transition: transform var(--trans-base);
+  }
+
+  // style
+  &--dark {
+    border-color: var(--bd-tertiary-steel);
+  }
+
+  &--dark &__value-prefix {
+    color: var(--txt-tertiary-steel);
+  }
+
+  &--dark &__value-result {
+    color: var(--txt-primary-steel);
+  }
+
+  &--dark &__slider {
+    --slider-connect-bg: var(--btn-primary-steel);
+    --slider-handle-bg: var(--btn-primary-steel);
+  }
+
+  &--dark .slider-touch-area::before {
+    background-color: var(--bg-internal-page-pastel);
+  }
+
+  &--blue {
+    border-color: var(--bd-tertiary-pastel);
+  }
+
+  &--blue &__value-result {
+    color: var(--txt-primary-pastel);
+  }
+
+  &--blue &__slider {
+    --slider-connect-bg: var(--icon-primary-pastel);
+    --slider-handle-bg: var(--icon-primary-pastel);
+  }
+
+  &--blue .slider-touch-area::before {
+    background-color: var(--icon-primary-steel);
+  }
+
+  &--m {
+    padding: rem(21) rem(24);
+  }
+
+  // state
+  @include media(hover) {
+    .slider-handle:hover {
+      transform: scale(calc(24 / 16));
+    }
+
+    .slider-handle:hover .slider-touch-area::before {
+      transform: scale(calc(6 / 4));
+    }
+  }
+
+  .slider-handle:active {
+    transform: scale(calc(18 / 16));
+  }
+}

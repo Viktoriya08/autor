@@ -1,0 +1,128 @@
+.info-table {
+  color: var(--txt-primary-invert);
+
+  &__elem {
+    padding: rem(45) rem(56);
+    padding-right: rem(32);
+    display: grid;
+    grid-template-columns: rem(180) rem(60) rem(80) 1fr rem(200);
+    gap: rem(32);
+    background-color: var(--bg-page-blue);
+
+    &:not(:last-child) {
+      border-bottom: 1px solid var(--bd-tertiary-trans-16);
+    }
+  }
+
+  &__title {
+    @include text-caption-xs;
+
+    text-transform: uppercase;
+    color: var(--txt-secondary-invert);
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: rem(16);
+  }
+
+  &__info {
+    @include text-caption-xs;
+
+    text-transform: uppercase;
+
+    &--l {
+      @include text-caption-xxxl;
+    }
+
+    &--m {
+      @include text-caption-xxl;
+    }
+
+    &--text {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__text {
+    border-left: 1px solid var(--bd-tertiary-trans-16);
+    border-right: 1px solid var(--bd-tertiary-trans-16);
+    padding: 0 rem(32);
+  }
+
+  &__text &__info {
+    max-width: rem(345);
+  }
+
+  @include media(hd-after) {
+
+    &__elem {
+      padding: rem(32);
+      grid-template-columns: 1fr 1fr 1fr;
+      column-gap: rem(8);
+      row-gap: rem(16);
+
+      &:not(:last-child) {
+        border-bottom: none;
+        margin-bottom: rem(8);
+      }
+    }
+
+    &__text {
+      grid-column: 1/-1;
+      grid-row: 2;
+      border: none;
+      border-bottom: 1px solid var(--bd-tertiary-trans-16);
+      padding: 0 0 rem(24);
+      margin-bottom: rem(8);
+    }
+
+    &__text &__info {
+      max-width: 100%;
+    }
+
+    &__name {
+      grid-column: 1/-1;
+      grid-row: 1;
+    }
+
+    &__text &__title,
+    &__name &__title {
+      display: none;
+    }
+
+    &__info {
+      &--text {
+        display: block;
+      }
+    }
+  }
+
+  @include media(tablet-after) {
+
+    &__elem {
+      padding: rem(24) rem(16);
+      grid-template-columns: minmax(rem(80), auto) minmax(rem(100), auto) 1fr;
+    }
+
+    &__info {
+      &--l {
+        @include title-section-accent;
+        line-height: 25px !important;
+      }
+
+      &--m {
+        @include text-caption-s;
+      }
+    }
+
+    &__term &__info,
+    &__contribution &__info,
+    &__payment &__info {
+      @include text-caption-s;
+    }
+  }
+}

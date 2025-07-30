@@ -1,0 +1,154 @@
+.btn-tertiary {
+  box-sizing: border-box;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  vertical-align: middle;
+  text-align: center;
+  border: none;
+  border-radius: var(--radius-xl);
+  text-transform: uppercase;
+  transition:
+    background-color var(--trans-base),
+    color var(--trans-base);
+  user-select: none;
+  cursor: pointer;
+  outline: 0;
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-left: rem(8);
+    transition: background-color var(--trans-base), transform var(--trans-base);
+    padding: rem(8);
+    flex: none;
+  }
+
+  &--m {
+    @include text-btn-m;
+
+    padding: rem(2) rem(2) rem(2) rem(16);
+  }
+
+  &--m &__icon {
+    width: rem(32);
+    height: rem(32);
+  }
+
+  // styles
+  &--dark {
+    color: var(--txt-primary-pastel);
+    background-color: var(--btn-primary-steel);
+  }
+
+  &--dark &__icon {
+    color: var(--txt-primary-steel);
+    background-color: var(--btn-primary-pastel);
+  }
+
+  &--dark-second {
+    color: var(--txt-primary-dusty-light);
+    background-color: var(--btn-primary-steel);
+  }
+
+  &--dark-second &__icon {
+    color: var(--txt-primary-steel);
+    background-color: var(--bg-internal-surface-dusty);
+  }
+
+  &--blue {
+    background-color: var(--btn-primary-pastel);
+    color: var(--txt-primary-steel);
+  }
+
+  &--blue &__icon {
+    background-color: var(--bg-page-olive);
+    color: var(--txt-primary-pastel);
+  }
+
+  &--white {
+    background-color: var(--btn-internal-primary-dusty);
+    color: var(--txt-primary-steel);
+  }
+
+  &--white &__icon {
+    background-color: var(--btn-primary-steel);
+    color: var(--icon-primary-dusty-light);
+  }
+
+  &--yellow {
+    background-color: var(--btn-primary-dusty);
+    color: var(--txt-primary-sandy);
+  }
+
+  &--yellow &__icon {
+    background-color: var(--btn-primary-sandy);
+    color: var(--icon-primary-dusty);
+  }
+
+  &--bronze {
+    background-color: var(--btn-primary-dusty);
+    color: var(--txt-second-sandy);
+  }
+
+  &--bronze &__icon {
+    background-color: var(--txt-second-sandy);
+    color: var(--icon-primary-dusty);
+  }
+
+  // state
+  &:disabled,
+  &.is-disabled {
+    cursor: default;
+    opacity: 0.32;
+    pointer-events: none;
+  }
+
+  @include media(hover) {
+    &:where(:hover, :focus-visible) .btn-tertiary__icon {
+      transform: rotate(45deg);
+    }
+
+    &--dark:where(:hover, :focus-visible) {
+      background-color: var(--btn-hover-primary-steel);
+    }
+
+    &--blue:where(:hover, :focus-visible) {
+      background-color: var(--btn-hover-primary-pastel);
+    }
+
+    &--white:where(:hover, :focus-visible) {
+      background-color: var(--btn-internal-hover-primary-dusty);
+    }
+
+    &--yellow:where(:hover, :focus-visible),
+    &--bronze:where(:hover, :focus-visible) {
+      background-color: var(--btn-hover-primary-dusty);
+    }
+  }
+
+  &--dark:active,
+  &--dark.is-active {
+    background-color: var(--btn-active-primary-steel);
+  }
+
+  &--blue:active,
+  &--blue.is-active {
+    background-color: var(--btn-active-primary-pastel);
+  }
+
+  &--white:active,
+  &--white.is-active {
+    background-color: var(--white);
+  }
+
+  &--yellow:active,
+  &--yellow.is-active,
+  &--bronze:active,
+  &--bronze.is-active {
+    background-color: var(--btn-active-primary-dusty);
+  }
+}

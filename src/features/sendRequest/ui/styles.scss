@@ -1,0 +1,9 @@
+.form-request {
+  // width: 100%;
+
+  // max-width: rem(440);
+
+  @include media(tablet-after) {
+    // max-width: none;
+  }
+}

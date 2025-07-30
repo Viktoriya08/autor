@@ -1,0 +1,87 @@
+{
+  "syntax": "scss",
+  "extends": [
+    "stylelint-config-standard-scss",
+    "stylelint-config-standard-vue/scss"
+  ],
+  "rules": {
+    "max-nesting-depth": 3,
+    "selector-attribute-quotes": "always",
+    "function-url-quotes": "always",
+    "declaration-no-important": [
+      true,
+      {
+        "message": "!important нужно применять осторожно",
+        "severity": "warning"
+      }
+    ],
+    "color-hex-length": [
+      "short",
+      {
+        "message": "HEX цвета можно сократить до 3-ёх символов"
+      }
+    ],
+    "at-rule-no-unknown": [
+      true,
+      {
+        "message": "Неизвестное @-правило",
+        "ignoreAtRules": [
+          "/^at-/",
+          "/^use/",
+          "/^forward/",
+          "/^mixin/",
+          "/^include/",
+          "/^if/",
+          "/^else/",
+          "/^function/",
+          "/^return/",
+          "/^each/"
+        ]
+      }
+    ],
+    "function-no-unknown": [
+      true,
+      {
+        "ignoreFunctions": [
+          "vh",
+          "size",
+          "lh",
+          "unit-from",
+          "strip-unit",
+          "from-percent-to-abs",
+          "letter-spacing"
+        ]
+      }
+    ],
+    "no-invalid-position-at-import-rule": [
+      true,
+      {
+        "message": "@import в начале",
+        "ignoreAtRules": [
+          "/^use/",
+          "/^forward/"
+        ]
+      }
+    ],
+    "at-rule-empty-line-before": null,
+    "alpha-value-notation": null,
+    "selector-class-pattern": null,
+    "declaration-block-no-redundant-longhand-properties": null,
+    "selector-pseudo-class-no-unknown": [
+      true,
+      {
+        "ignorePseudoClasses": [
+          "global"
+        ]
+      }
+    ],
+    "property-no-unknown": [
+      true,
+      {
+        "ignoreProperties": [
+          "font-smooth"
+        ]
+      }
+    ]
+  }
+}

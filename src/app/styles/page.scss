@@ -1,0 +1,28 @@
+.page {
+  .is-internal & {
+    padding-top: var(--height-header);
+  }
+
+  .theme-blue & {
+    color: var(--txt-primary-steel);
+    background-color: var(--bg-internal-page-pastel);
+  }
+
+  .theme-blue-promo & {
+    color: var(--txt-primary-steel);
+  }
+
+  .theme-yellow & {
+    background-color: var(--bg-internal-page-dusty);
+  }
+
+  .theme-brown & {
+    color: var(--txt-primary-steel);
+    background-color: var(--bg-page-sandy);
+  }
+
+  .theme-bronze & {
+    color: var(--txt-second-sandy);
+    background-color: var(--bg-internal-page-dusty);
+  }
+}

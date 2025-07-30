@@ -1,0 +1,245 @@
+:root {
+  --white: #fff;
+  --black: #000;
+  --error-alert: #f74a4a;
+  --error-text: #ee440c;
+  --color-trans: rgb(0 0 0 / 0);
+
+  // colors primitive //
+
+  // pastel blue (white)
+  --c-pastel-blue-main: rgba(196 224 250 / 1);
+  --c-pastel-blue-1000: rgba(177 217 253 / 1);
+  --c-pastel-blue-700: rgba(178 200 219 / 1);
+  --c-pastel-blue-500: rgba(194 220 242 / 0.64);
+  --c-pastel-blue-300: rgb(194 220 242 / 0.18);
+  --c-pastel-blue-200: rgba(194 220 242 / 0.1);
+  --c-pastel-blue-50: rgba(218 235 249 / 1);
+  --c-pastel-blue-10: rgba(236 246 255 / 1);
+
+  // steel blue (dark)
+  --c-steel-blue-main: rgba(44 66 82 / 1);
+  --c-steel-blue-800: rgba(59 87 107 / 1);
+  --c-steel-blue-600: rgba(79 111 133 / 1);
+  --c-steel-blue-500: rgba(32 47 59 / 0.5);
+  --c-steel-blue-400: rgba(40 59 73 / 0.4);
+  --c-steel-blue-300: rgba(40 59 73 / 0.16);
+  --c-steel-blue-200: rgba(40 59 73 / 0.08);
+
+  // dusty yellow
+  --c-dusty-yellow-main: rgba(228 193 164 / 1);
+  --c-dusty-yellow-1000: rgba(224 176 136 / 1);
+  --c-dusty-yellow-900: rgba(232 212 195 / 1);
+  --c-dusty-yellow-400: rgb(228 193 164 / 0.4);
+  --c-dusty-yellow-200: rgba(228 193 164 / 0.08);
+  --c-dusty-yellow-50: rgba(230 218 207 / 1);
+  --c-dusty-yellow-25: rgba(244 233 222 / 1);
+  --c-dusty-yellow-10: rgba(255 253 251 / 1);
+  --c-dusty-yellow-secondary: rgb(209 166 129 / 1);
+  --c-dusty-yellow-third: rgba(236 212 193 / 1);
+
+  // olive green
+  --c-olive-green-main: rgba(123 124 93 / 1);
+  --c-olive-green-800: rgba(95 96 72 / 1);
+  --c-olive-green-500: rgb(123 124 93 / 0.64);
+
+  // sandy brown
+  --c-sandy-brown-main: rgba(129 100 90 / 1);
+  --c-sandy-brown-dark: rgba(110 84 75 / 1);
+  --c-sandy-brown-secondary: rgb(92 70 62 / 1);
+
+  // end colors primitive //
+
+  --body-color: #b2c8db;
+  --primary-tabs: #ECF6FF;
+  --primary-invert: #c4e0fa;
+  --primary-invert-hover: #b1d9fd;
+  --primary-invert-pressed: rgba(194 220 242 / 0.64);
+  --primary-dark: #3b576b;
+  --primary-dark-pressed: #4f6f85;
+  --primary-dark-hover: #2c4252;
+  --tertiary-hover: rgba(228 193 164 / 0.48);
+  --primary-green-pressed: rgba(123 124 93 / 0.64);
+  --primary-green-hover: #5f6048;
+  --primary-green-dark: #707152;
+  --brown-trans-70: rgba(228 193 164 / 0.7);
+  --brown-trans-80: rgba(228 193 164 / 0.8);
+  --brown-trans-90: rgba(228 193 164 / 0.9);
+  --brown-trans-18: rgba(228 193 164 / 0.18);
+  --primary-brown: #6E544B;
+
+  // TEXT //
+  --txt-primary: #c4e0fa;
+  --txt-cookies: #c4e0fa;
+  --txt-primary-invert: #3b576b;
+  --txt-black: #171718;
+  --txt-secondary-invert: rgba(40 59 73 / 0.4);
+  --txt-secondary-blue: rgba(194 220 242 / 0.4);
+  --txt-secondary-blue-64: rgba(194 220 242 / 0.64);
+  --txt-tertiary: #e4c1a4;
+  --txt-brown: #6e544b;
+  --txt-interface: #FFFDFB;
+
+  // upd. TEXT //
+  // pastel
+  --txt-primary-pastel: var(--c-pastel-blue-main);
+  --txt-second-pastel: var(--c-pastel-blue-500);
+
+  // steel
+  --txt-primary-steel: var(--c-steel-blue-800);
+  --txt-second-steel: var(--c-steel-blue-600);
+  --txt-tertiary-steel: var(--c-steel-blue-400);
+
+  // yellow
+  --txt-primary-dusty: var(--c-dusty-yellow-main);
+  --txt-primary-dusty-light: var(--c-dusty-yellow-25);
+  --txt-interface-dusty: var(--c-dusty-yellow-10);
+
+  // sandy
+  --txt-primary-sandy: var(--c-sandy-brown-dark);
+  --txt-second-sandy: var(--c-sandy-brown-secondary);
+
+  // end TEXT //
+
+
+  // BACKGROUND //
+  --bg-page-sand: #81645a;
+  --bg-page-blue: #b2c8db;
+  --bg-page-menu: #B8D4EB;
+  --bg-page-green: #7b7c5d;
+  --bg-page-promo: #c4e0fa;
+  --bg-page-promo-dark: #A7BDCF;
+  --bg-page-yellow: #f4e9de;
+  --bg-overlay: rgba(32 47 59 / 0.5);
+  --bg-green-trans-20: rgb(123 124 93 / 23%);
+
+  // upd. BACKGROUND //
+  // pastel
+  --bg-page-pastel: var(--c-pastel-blue-700);
+  --bg-page-surface-pastel: var(--c-pastel-blue-main);
+  --bg-page-blured-pastel: var(--c-pastel-blue-200);
+  --bg-internal-page-pastel: var(--c-pastel-blue-50);
+  --bg-internal-surface-pastel-light: var(--c-pastel-blue-10);
+
+  // steel
+  --bg-overlay-primary-steel: var(--c-steel-blue-500);
+
+  // dusty
+  --bg-page-card-dusty: var(--c-dusty-yellow-200);
+  --bg-internal-page-dusty: var(--c-dusty-yellow-secondary);
+  --bg-internal-surface-dusty-white: var(--c-dusty-yellow-10);
+  --bg-internal-surface-dusty: var(--c-dusty-yellow-25);
+  --bg-internal-card-dusty: var(--c-dusty-yellow-10);
+
+  // olive
+  --bg-page-olive: var(--c-olive-green-main);
+
+  // sand
+  --bg-page-sandy: var(--c-sandy-brown-main);
+
+  // bronze
+  --bg-internal-page-bronze: #D1A681;
+
+  // other
+  --bg-tile-item-1: hsl(16 19% 30%);
+  --bg-tile-item-2: hsl(15 20% 35%);
+  --bg-tile-item-3: hsl(16 20% 38%);
+  --bg-tile-item-4: hsl(16 20% 42%);
+
+  // end BACKGROUND //
+
+  // BORDER //
+  --bd-tertiary-trans-16: rgba(40 59 73 / 0.16);
+  --bd-secondary-trans-40: rgba(40 59 73 / 0.4);
+  --bd-primary: #3b576b;
+  --bd-tertiary-blue-trans-18: rgba(194 220 242 / 0.18);
+  --bd-secondary-invert: rgba(194 220 242 / 0.64);
+  --bd-primary-invert: #c4e0fa;
+  --bd-primary-25: rgba(217 234 249 / 0.25);
+  --bd-tertiary-send: rgba(228 193 164 / 0.16);
+
+  // upd. BORDER //
+  // --bd-tertiary: rgb(40 59 73 / 0.16);
+  --bd-primary-steel: var(--c-steel-blue-800);
+  --bd-tertiary-steel: var(--c-steel-blue-300);
+  --bd-tertiary-pastel: var(--c-pastel-blue-300);
+  --bd-primary-bronze: rgba(110 84 75 / 0.3);
+
+  // end BORDER //
+
+  // BUTTON //
+  --btn-bg: #c4e0fa;
+  --btn-bg-white: #FFFDFB;
+  --btn-bg-yellow: #E0B088;
+  --btn-bg-yellow-light: #F4E9DE;
+  --btn-bg-trans: rgb(0 0 0 / 0);
+  --btn-bg-trans-hover: #2c4252;
+  --btn-text: #3b576b;
+  --btn-text-yellow: #F5EFE9;
+
+  // --btn-icon: #7b7c5d;
+  --btn-green: #7b7c5d;
+  --btn-bg-hover: #b1d9fd;
+  --btn-bg-hover-yellow: #E6DACF;
+  --btn-bg-pressed: rgba(194 220 242 / 0.64);
+  --btn-bg-yellow-pressed: #E8D4C3;
+  --btn-bg-yellow-trans-40: rgb(228 193 164 / 0.4);
+  --btn-tertiary-invert: rgba(194 220 242 / 0.18);
+  --btn-gradient-primary: linear-gradient(90deg, rgb(217 234 249 / 1) 0%, rgb(217 234 249 / 0.2) 100%);
+
+  // upd. BUTTON //
+  --btn-primary-steel: var(--c-steel-blue-800);
+  --btn-primary-pastel: var(--c-pastel-blue-main);
+  --btn-primary-dusty: var(--c-dusty-yellow-main);
+  --btn-primary-olive: var(--c-olive-green-main);
+  --btn-primary-sandy: var(--c-sandy-brown-main);
+  --btn-internal-primary-dusty: var(--c-dusty-yellow-10);
+
+  // button hover
+  --btn-hover-primary-steel: var(--c-steel-blue-main);
+  --btn-hover-primary-pastel: var(--c-pastel-blue-1000);
+  --btn-hover-primary-dusty: var(--c-dusty-yellow-1000);
+  --btn-hover-primary-olive: var(--c-olive-green-800);
+  --btn-internal-hover-primary-dusty: var(--c-dusty-yellow-50);
+  --btn-internal-hover-second-dusty: var(--c-dusty-yellow-400);
+
+  // button active
+  --btn-active-primary-steel: var(--c-steel-blue-600);
+  --btn-active-primary-pastel: var(--c-pastel-blue-500);
+  --btn-active-primary-dusty: var(--c-dusty-yellow-900);
+  --btn-active-primary-olive: var(--c-olive-green-500);
+  --btn-internal-active-primary-dusty: var(--c-dusty-yellow-50);
+
+
+  // end BUTTON //
+
+  // ICON //
+  --icon-primary-steel: var(--c-steel-blue-800);
+  --icon-primary-pastel: var(--c-pastel-blue-main);
+  --icon-primary-dusty: var(--c-dusty-yellow-main);
+  --icon-primary-dusty-light: var(--c-dusty-yellow-10);
+  --icon-primary-sandy: var(--c-sandy-brown-main);
+
+  // end ICON //
+
+  // GRADIENTs //
+  --gradient-main: linear-gradient(rgb(24 25 37), rgb(24 25 37));
+  --gradient-second: linear-gradient(rgb(167 189 207), rgb(167 189 207 / 0.94) 64%, rgb(162 189 210 / 0) 100%);
+  --gradient-second-turn: linear-gradient(0deg, rgba(167 189 207 / 1) 55%, rgba(167 189 207 / 0) 100%);
+  --gradient-hero: linear-gradient(to bottom, rgb(6 6 6 / 67%), rgb(6 6 6 / 0.5216), rgb(6 6 6 / 26%), rgb(6 6 6 / 26%), rgb(6 6 6 / 26%), rgb(6 6 6 / 26%));
+  --gradient-hero-inner: linear-gradient(180deg, rgba(23 23 24 / 0.7) 24%, rgba(23 23 24 / 1) 100%);
+  --gradient-shadow-black: linear-gradient(180deg, rgba(0 0 0 / 0) 0%, rgba(23 23 24 / 1) 100%);
+
+  // --gradient-second: linear-gradient(rgb(24, 25, 37), rgb(24, 25, 37));
+
+  // OVERLAYs //
+  --c-overlay-main: rgb(19 20 25 / 0.4);
+
+  // SHADOW //
+  --shadow-btn-s: 0 1px 2px 0 rgba(0 0 0 / 0.08),
+    0 1px 4px 0 rgba(33 52 65 / 0.08);
+  --shadow-dropdown: 0 3px 3px 0 rgba(58 87 107 / 0.05),
+    0 16px 8px 0 rgba(58 87 107 / 0.05);
+
+  // end SHADOW //
+}

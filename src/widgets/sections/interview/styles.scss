@@ -1,0 +1,89 @@
+.interview {
+  margin-top: var(--padding-decor);
+  margin-bottom: rem(120);
+  padding-top: rem(137);
+
+  &__title {
+    @include title-section;
+
+    text-transform: uppercase;
+    margin: 0 auto;
+    max-width: rem(1175);
+    text-align: center;
+  }
+
+  &__btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity var(--trans-base), color var(--trans-base);
+  }
+
+  &__error {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-transform: uppercase;
+  }
+
+  &__video-box {
+    &:not(:first-child) {
+      margin-top: rem(65);
+    }
+
+    position: relative;
+    width: 100%;
+    max-width: rem(810);
+    aspect-ratio: 810 / 518;
+    clip-path: inset(0% 0% 0% 0% round 50%);
+    margin-inline: auto;
+    background-color: var(--txt-brown);
+    overflow: hidden;
+    cursor: pointer;
+    transition: var(--trans-base);
+    transition-property: clip-path, border-radius;
+
+    /*
+      Fix for platforms that
+      don't support 'clip-path'
+    */
+    border-radius: 50%;
+
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &.is-playing {
+      clip-path: inset(0% 0% 0% 0% round 10%);
+
+      /*
+        Fix for platforms that
+        don't support 'clip-path'
+      */
+      border-radius: 10%;
+
+      .video-player__btn {
+        opacity: 0;
+        pointer-events: none;
+      }
+    }
+  }
+
+  @include media(hd-after) {
+    padding-top: rem(80);
+    margin-bottom: rem(100);
+
+    &__video-box {
+      max-width: rem(428);
+    }
+  }
+
+  @include media(tablet-after) {
+    padding-top: rem(60);
+    margin-bottom: rem(48);
+  }
+}

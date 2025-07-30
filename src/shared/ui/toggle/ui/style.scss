@@ -1,0 +1,43 @@
+.toggle {
+  display: flex;
+  align-items: center;
+  color: var(--txt-primary-steel);
+  cursor: pointer;
+  user-select: none;
+
+  &__control {
+    display: flex;
+    border-radius: rem(100);
+    padding: rem(4);
+    width: rem(44);
+    background-color: var(--bg-internal-surface-dusty-white);
+    transition: background-color var(--trans-base);
+  }
+
+  &__input {
+    @include square(rem(16));
+
+    appearance: none;
+    border-radius: 50%;
+    background-color: currentcolor;
+    transition: transform var(--trans-base), background-color var(--trans-base);
+    cursor: inherit;
+  }
+
+  &__text {
+    @include text-btn-m;
+
+    text-transform: uppercase;
+    margin-left: rem(8);
+  }
+
+  // state
+  &__input:checked {
+    transform: translateX(calc(100% + rem(2)));
+    background-color: var(--bg-internal-surface-dusty-white);
+  }
+
+  &__control:has(:checked) {
+    background-color: currentcolor;
+  }
+}

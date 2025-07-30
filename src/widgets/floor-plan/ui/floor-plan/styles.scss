@@ -1,0 +1,51 @@
+.floor-plan {
+  position: relative;
+  width: 100%;
+
+  path[data-name] {
+    mix-blend-mode: darken;
+    fill: #657787 !important;
+    pointer-events: none;
+  }
+
+  path[data-state="AVAILABLE"],
+  path[data-state="BOOKED"],
+  path[data-state="SOLD"] {
+    transition: fill var(--trans-base), opacity var(--trans-base);
+    cursor: pointer;
+    pointer-events: all;
+  }
+
+  path[data-state="AVAILABLE"] {
+    fill: #DDB493 !important;
+  }
+
+  path[data-state="AVAILABLE"]:hover,
+  path[data-state="BOOKED"]:hover,
+  path[data-state="SOLD"]:hover {
+    opacity: 0.9 !important;
+    fill: #C09776 !important;
+  }
+
+  &__tooltip {
+    position: absolute;
+  }
+
+  @include media(tablet-after) {
+    &__img {
+      position: relative;
+      height: 100vh;
+      width: 100%;
+    }
+
+    &__img  svg {
+      display: block;
+      width: 100vh;
+      max-width: none;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translateX(-50%) translateY(-50%) rotateZ(-90deg);
+    }
+  }
+}

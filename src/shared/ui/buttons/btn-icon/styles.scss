@@ -1,0 +1,281 @@
+.btn-icon {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  vertical-align: middle;
+  border: none;
+  border-radius: 50%;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+  transition:
+    background-color var(--trans-base),
+    opacity var(--trans-base),
+    color var(--trans-base);
+  user-select: none;
+  color: var(--btn-bg);
+
+  &__icon {
+    display: flex;
+    width: var(--size-icon, 1rem);
+    height: var(--size-icon, 1rem);
+    position: relative;
+    pointer-events: none;
+  }
+
+  &__icon svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  &--yellow-bg,
+  &--dark-bg {
+    position: relative;
+    transition: color var(--trans-base);
+  }
+
+  &--yellow-bg::before,
+  &--dark-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    transition: transform var(--trans-base), background-color var(--trans-base);
+  }
+
+  // size
+  &--size-s {
+    width: rem(48);
+    height: rem(48);
+  }
+
+  &--size-m {
+    width: rem(56);
+    height: rem(56);
+  }
+
+  &--s {
+    width: rem(36);
+    height: rem(36);
+  }
+
+  &--m {
+    width: rem(40);
+    height: rem(40);
+  }
+
+  &--l {
+    width: rem(48);
+    height: rem(48);
+  }
+
+  &--xl {
+    width: rem(56);
+    height: rem(56);
+  }
+
+  &--slider {
+    width: rem(40);
+    height: rem(40);
+  }
+
+  // style
+  &--blur {
+    border: 1px solid var(--bd-primary-25);
+    position: relative;
+    backdrop-filter: blur(20px);
+  }
+
+  &--blue-trans {
+    background-color: var(--btn-tertiary-invert);
+  }
+
+  &--bg {
+    background-color: var(--btn-bg-pressed);
+
+    svg {
+      color: var(--btn-bg-trans-hover);
+    }
+  }
+
+  &--dark {
+    color: var(--icon-primary-steel);
+    background-color: transparent;
+  }
+
+  &--blue {
+    color: var(--icon-primary-pastel);
+    background-color: transparent;
+  }
+
+  &--yellow {
+    color: var(--icon-primary-dusty);
+    background-color: transparent;
+  }
+
+  &--brown-second {
+    color: var(--txt-second-sandy);
+    background-color: transparent;
+  }
+
+  &--dark-bd {
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--bd-tertiary-steel);
+    color: var(--icon-primary-steel);
+  }
+
+  &--yellow-bg {
+    color: var(--txt-primary-steel);
+  }
+
+  &--yellow-bg::before {
+    background-color: var(--bg-internal-surface-dusty-white);
+  }
+
+  &--brown {
+    background-color: var(--brown-trans-18);
+    color: var(--txt-tertiary);
+
+    &:active,
+    &.is-active {
+      background-color: var(--brown-trans-90);
+      color: var(--bg-page-sand);
+    }
+  }
+
+  // states
+  &:disabled,
+  &.is-disabled {
+    cursor: default;
+    opacity: 0.32;
+    pointer-events: none;
+  }
+
+  // .page--yellow .header & {
+  //   fill: var(--btn-text);
+  // }
+
+  &--color-yellow {
+    background-color: var(--btn-bg-white);
+    color: var(--btn-bg-trans-hover);
+
+    &:active,
+    &.is-active {
+      background-color: var(--btn-bg-hover-yellow);
+      color: var(--btn-bg-trans-hover);
+    }
+  }
+
+  &--color-yellow-light {
+    background-color: var(--btn-bg-yellow-light);
+    color: var(--btn-bg-trans-hover);
+
+    &:active,
+    &.is-active {
+      background-color: var(--btn-bg-yellow-light);
+      color: var(--btn-bg-trans-hover);
+    }
+  }
+
+  // state
+  @include media(hover) {
+    &--default:where(:hover, :focus-visible) {
+      cursor: pointer;
+      background: var(--btn-bg-trans-hover);
+    }
+
+    &--bg:where(:hover, :focus-visible) {
+      background: var(--btn-bg-trans-hover);
+      color: var(--btn-bg);
+
+      svg {
+        color: var(--btn-bg);
+      }
+    }
+
+    &--blur:where(:hover, :focus-visible) {
+      background: var(--bd-secondary-trans-40);
+    }
+
+    &--color-yellow:where(:hover, :focus-visible) {
+      background-color: var(--btn-bg-hover-yellow);
+      color: var(--btn-bg-trans-hover);
+    }
+
+    &--color-yellow-light:where(:hover, :focus-visible) {
+      background-color: var(--btn-bg-hover-yellow);
+      color: var(--btn-bg-trans-hover);
+    }
+
+    &--dark:where(:hover, :focus-visible) {
+      color: var(--btn-hover-primary-pastel);
+      background-color: var(--btn-bg-trans-hover);
+    }
+
+    &--blue:where(:hover, :focus-visible) {
+      background-color: var(--btn-hover-primary-steel);
+    }
+
+    &--yellow:where(:hover, :focus-visible) {
+      background-color: var(--icon-primary-sandy);
+    }
+
+    &--brown-second:where(:hover, :focus-visible) {
+      background-color: var(--btn-primary-dusty);
+    }
+
+    &--dark-bd:not(.is-disabled, [disabled]):hover {
+      opacity: 0.5;
+    }
+
+    &--yellow-bg:hover {
+      color: var(--icon-primary-sandy);
+    }
+
+    &--yellow-bg:hover::before {
+      background-color: var(--btn-internal-hover-primary-dusty);
+      transform: scale(calc(56 / 48));
+    }
+
+    &--blue-trans:hover {
+      background-color: var(--btn-bg);
+      color: var(--btn-green);
+    }
+
+    &--brown:hover {
+      background-color: var(--brown-trans-90);
+      color: var(--bg-page-sand);
+    }
+  }
+
+  @include media(quadhd-after) {
+    &--size-m {
+      width: rem(64);
+      height: rem(64);
+    }
+
+    &--size-m .btn-icon__icon {
+      width: rem(24);
+      height: rem(24);
+    }
+  }
+
+  @include media(tablet-after) {
+    &--size-m {
+      width: rem(48);
+      height: rem(48);
+    }
+
+    &--slider {
+      width: rem(32);
+      height: rem(32);
+    }
+  }
+}

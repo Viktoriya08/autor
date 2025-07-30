@@ -1,0 +1,75 @@
+@use 'sass:meta';
+@use 'sass:map';
+@use 'sass:math';
+@use 'vars' as *;
+
+// <...> to get unitless value
+@function strip-unit($number) {
+  @if meta.type-of($number) == 'number' and not math.is-unitless($number) {
+    @return math.div($number, $number * 0 + 1);
+  }
+
+  @return $number;
+}
+
+// <...> to get proportional value in '%'
+// from desired sizes
+@function unit-from($all-width, $el-width, $unit: '%') {
+  @return #{calc($el-width / ($all-width / 100))}#{$unit};
+}
+
+// <...> to get proportional value in 'absolute-units'
+// from desired sizes
+@function from-percent-to-abs($baseSize, $desiredPercentSize, $absUnit: 'px') {
+  @return #{calc(strip-unit($baseSize) * strip-unit($desiredPercentSize) / 100)}#{$absUnit};
+}
+
+// <...> to get 'aspect-ratio'
+// with single value
+@function aspect-ratio($width, $height) {
+  @return #{calc($width / $height)};
+}
+
+// <...> to get value in 'rem' from 'px'
+@function rem($fz) {
+  @return #{calc(strip-unit($fz) / strip-unit($font-base-size))}rem;
+}
+
+// <...> to get 'letter-spacing' value in 'em'
+// from 'px' or '%'
+@function letter-spacing($ls, $srcUnit: 'px') {
+  $parsedLs: '';
+
+  @if $srcUnit == 'px' {
+    $parsedLs: calc((strip-unit($ls) * $font-base-size) / 1000); // px -> em
+  } @else {
+    $parsedLs: calc(strip-unit($ls) / 100); // % -> em
+  }
+
+  @return #{$parsedLs}em;
+}
+
+// <...> to get 'line-height' coefficient
+@function lh($font-size, $lineHeight) {
+  @return calc($lineHeight / $font-size);
+}
+
+@function size($size) {
+  @return #{calc(#{$size} / var(--scale-vw) * var(--vw, 1vw))};
+}
+
+/*
+--scale-vw: calc(1920 / 100);
+16 / --scale-vw: *
+*/
+
+// <...> to get correct 'vh' value
+// dependent from Platform
+@function vh($vh-nums) {
+  @return calc(#{$vh-nums} * var(--vh, 1vh));
+}
+
+// https://www.kevinpowell.co/article/using-my-colors/
+@function color($name) {
+  @return map.get($colors, $name);
+}

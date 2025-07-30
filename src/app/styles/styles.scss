@@ -1,0 +1,22 @@
+// // System: Core
+// подключается в Vite в опции "additionalData" для scss
+// @import 'system/functions';
+// @import 'system/vars';
+// @import 'system/typography';
+// @import 'system/mix';
+
+// System: Global
+@use 'system/fonts';
+@use 'system/animations';
+@use 'system/reset';
+@use 'system/utils';
+@use 'system/core';
+@use 'system/colors';
+@use 'system/typography';
+@use 'system/base-modal';
+
+@use 'page';
+
+// lib
+@use 'lib/split-type';
+@use 'lib/lenis';

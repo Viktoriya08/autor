@@ -1,0 +1,33 @@
+.btn-audio {
+  g {
+    transform-origin: center;
+  }
+
+  &.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  &.is-active {
+    .line-1 {
+      animation: bar1 1.2s infinite linear;
+    }
+
+    .line-2 {
+      animation: bar2 1.2s infinite linear;
+    }
+
+    .line-3 {
+      animation: bar3 1.2s infinite linear;
+    }
+
+    .line-4 {
+      animation: bar1 1.2s infinite linear;
+    }
+
+    .line-5 {
+      animation: bar2 1.2s infinite linear;
+    }
+  }
+}

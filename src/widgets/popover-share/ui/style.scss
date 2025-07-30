@@ -1,0 +1,35 @@
+.popover-share {
+  position: relative;
+  z-index: 5;
+
+  &__body {
+    position: absolute;
+    left: rem(4);
+    top: 100%;
+    background-color: var(--bg-internal-surface-dusty);
+    padding: rem(24);
+    visibility: hidden;
+    pointer-events: none;
+    opacity: 0;
+    transition:
+      visibility 0.3s ease-in 0s,
+      transform 0.3s ease-in 0s,
+      opacity var(--trans-base);
+    transform: translateY(5px);
+  }
+
+  &.is-active &__body {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: all;
+    transition:
+      visibility 0s ease-in 0s,
+      transform var(--trans-base),
+      opacity var(--trans-base);
+    transform: translateY(0);
+  }
+
+  &__item {
+    display: block;
+  }
+}

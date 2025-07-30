@@ -1,0 +1,28 @@
+.marker-main {
+  display: block;
+  width: 135px;
+  height: 158px;
+  transform: translateX(-50%) translateY(-100%);
+  color: var(--primary-dark);
+
+  &--accent {
+    color: var(--bg-page-green);
+  }
+
+  & svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  // ===[ MEDIA ]===
+  @include media(fullhd-after) {
+    width: 109px;
+    height: 128px;
+  }
+
+  @include media(tablet-after) {
+    width: 62px;
+    height: 72px;
+  }
+}

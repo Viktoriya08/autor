@@ -1,0 +1,67 @@
+.select-radio {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  &__btn {
+    @include text-btn-s;
+
+    background: none;
+    margin: 0;
+    border: none;
+    outline: 0;
+    box-shadow: none;
+    color: var(--txt-primary-steel);
+    text-transform: uppercase;
+    padding: rem(9) 0;
+    display: flex;
+    align-items: center;
+  }
+
+  &__btn-icon {
+    @include square(rem(14));
+
+    margin-left: rem(4);
+    transition: transform var(--trans-base);
+  }
+
+  &.is-active &__btn-icon {
+    transform: rotate(180deg);
+  }
+
+  &__list {
+    padding: rem(8);
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: rem(2);
+    border-radius: rem(10);
+    background-color: var(--bg-internal-surface-pastel-light);
+    box-shadow: var(--shadow-dropdown);
+    position: absolute;
+    top: 100%;
+    right: 0;
+    z-index: 1;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(5px);
+    transition:
+      transform 0s ease 0.15s,
+      opacity 0.15s ease 0s,
+      visibility 0s ease 0.15s;
+  }
+
+  &__list-modal {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  &.is-active &__list {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+    transition:
+      transform 0.3s ease 0s,
+      opacity 0.3s ease 0s,
+      visibility 0s ease 0s;
+  }
+}

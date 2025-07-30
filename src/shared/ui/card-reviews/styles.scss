@@ -1,0 +1,118 @@
+.card-reviews {
+  background-color: var(--bg-page-blue);
+  color: var(--txt-primary-invert);
+  padding: rem(32);
+  display: flex;
+  flex-direction: column;
+  gap: rem(16);
+  min-height: rem(415);
+  height: 100%;
+  cursor: pointer;
+  position: relative;
+  transition: background-color var(--trans-base);
+
+  &__link {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+
+  &__img {
+    width: rem(88);
+    height: rem(88);
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: var(--txt-secondary-invert);
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &__box-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start
+  }
+
+  &__text {
+    @include text-caption-xs;
+
+    text-transform: uppercase;
+    color: var(--txt-primary-invert);
+
+    &--grey {
+      color: var(--txt-secondary-invert);
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: flex-end;
+    gap: rem(8);
+    margin-top: auto;
+  }
+
+  &__number {
+    @include font-size(120px, 85px);
+
+    text-transform: uppercase;
+    letter-spacing: letter-spacing(-8%, "%");
+  }
+
+  &__hover {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-green-trans-20);
+    opacity: 0;
+    transition: opacity var(--trans-base);
+
+    .btn-round {
+      transform: rotate(5deg) scale(0.8);
+      transition: transform var(--trans-base);
+      pointer-events: none;
+    }
+  }
+
+  @include media(hover) {
+    &:hover &__hover {
+      opacity: 1;
+
+      .btn-round {
+        transform: rotate(0deg) scale(1);
+      }
+    }
+  }
+
+  @include media(fullhd-after) {
+    min-height: rem(415);
+  }
+
+  @include media(hd-after) {
+    min-height: rem(340);
+
+    &__number {
+      @include font-size(96px, 68px);
+    }
+  }
+
+  @include media(tablet-after) {
+    min-height: rem(235);
+    padding: rem(24);
+
+    &__img {
+      width: rem(48);
+      height: rem(48);
+    }
+
+    &__number {
+      @include font-size(64px, 45px);
+    }
+  }
+
+}

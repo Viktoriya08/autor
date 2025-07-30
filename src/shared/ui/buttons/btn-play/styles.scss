@@ -1,0 +1,49 @@
+.btn-play {
+  @include btn-reset;
+  @include text-caption-s;
+
+  text-transform: uppercase;
+  width: rem(232);
+  height: rem(137);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(3px);
+  overflow: hidden;
+  border-radius: 50%;
+  transition: color var(--trans-base);
+
+  &::before {
+    content: '';
+      display: block;
+      inset: 0;
+      backdrop-filter: blur(115px);
+      position: absolute;
+      z-index: -1;
+      background: radial-gradient(circle, rgb(153 151 151 / 40%) -17%, rgb(0 0 0 / 0) 54%);
+  }
+
+  // states
+  &:active,
+  &.is-active {
+    outline: none;
+  }
+
+  &:disabled,
+  &.is-disabled {
+    cursor: default;
+    opacity: 0.32;
+    pointer-events: none;
+  }
+
+  @include media(hover) {
+    &:where(:hover, :focus-visible){
+      color: var(--txt-brown);
+    }
+  }
+
+  @include media(quadhd-after) {
+    width: rem(123);
+    height: rem(72);
+  }
+}

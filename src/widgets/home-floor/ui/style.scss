@@ -1,0 +1,65 @@
+.home-floor {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  aspect-ratio: 1146/717;
+  height: 100%;
+
+  &__home,
+  &__floors {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    min-width: 0;
+  }
+
+  &__home {
+    display: block;
+    height: 100%;
+    min-height: 0;
+    mix-blend-mode: luminosity;
+  }
+
+  &__floors {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    width: 77.83%;
+    height: auto;
+    aspect-ratio: 892/414;
+    top: 12%;
+    left: 15.6%;
+    position: relative;
+  }
+
+  &__floors svg {
+    width: 100%;
+    height: auto;
+  }
+
+  // &__floors svg path {
+  //   fill: rgba(192 151 118 / 0.7);
+  //   stroke: var(--bd-primary-steel);
+  //   opacity: 0;
+  //   transition: opacity 0.15s ease;
+  // }
+
+  // &__floors svg path:hover {
+  //   opacity: 1;
+  // }
+
+  &__floors [data-active="false"] {
+    fill: #657787;
+    stroke: var(--bd-primary-steel);
+    opacity: 0.6;
+  }
+
+  &__floors [data-active="true"] {
+    fill: rgba(192 151 118 / 0.7);
+    stroke: var(--bd-primary-steel);
+    opacity: 0;
+    transition: opacity 0.15s ease;
+  }
+
+  &__floors [data-active="true"]:hover {
+    opacity: 1;
+  }
+}

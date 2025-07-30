@@ -1,0 +1,509 @@
+@use "vars" as *;
+@use "functions" as *;
+@use "mix" as *;
+
+// ===[ TITLES ]===
+@mixin title-primary-accent {
+  @include font-size(155px, 139px);
+
+  font-weight: 400;
+  letter-spacing: letter-spacing(-6%, "%");
+  text-transform: uppercase;
+
+  @include media(quadhd-after) {
+    @include font-size(136px, 122px);
+  }
+
+  @include media(tablet-after) {
+    @include font-size(64px, 57px);
+  }
+}
+
+@mixin title-page {
+  @include font-size(96px, 86px);
+
+  font-weight: 400;
+  letter-spacing: letter-spacing(-5%, "%");
+  text-transform: uppercase;
+
+  // MEDIA
+  // @include media(fullhd-before) {
+  //   font-size: size(96);
+  //   line-height: size(86);
+  // }
+
+  @include media(hd-after) {
+    @include font-size(64px, 58px);
+  }
+
+  @include media(tablet-after) {
+    @include font-size(36px, 30px);
+  }
+}
+
+@mixin title-page-lg {
+  @include font-size(104px, 94px);
+
+  font-weight: 400;
+  letter-spacing: letter-spacing(-5%, "%");
+  text-transform: uppercase;
+
+  @include media(hd-after) {
+    @include font-size(84px, 80px);
+  }
+
+  @include media(tablet-after) {
+    @include font-size(48px, 45px);
+  }
+}
+
+@mixin title-page-xl {
+  @include font-size(278px, 250px);
+
+  font-weight: 400;
+  letter-spacing: letter-spacing(-8%, "%");
+  text-transform: uppercase;
+
+  // MEDIA
+  // @include media(fullhd-before) {
+  //   font-size: size(278);
+  //   line-height: size(250);
+  // }
+
+  @include media(fullhd-after) {
+    @include font-size(210px, 190px);
+  }
+
+  @include media(quadhd-after) {
+    @include font-size(107px, 96px);
+  }
+
+  @include media(tablet-after) {
+    @include font-size(53px, 48px);
+  }
+}
+
+@mixin title-page-inner {
+  @include font-size(192px, 173px);
+
+  font-weight: 400;
+  letter-spacing: letter-spacing(-6%, "%");
+  text-transform: uppercase;
+
+  @include media(fullhd-after) {
+    @include font-size(142px, 128px);
+  }
+
+  @include media(hd-after) {
+    @include font-size(73px, 66px);
+
+    letter-spacing: letter-spacing(-5%, "%");
+  }
+
+  @include media(tablet-after) {
+    @include font-size(48px, 41px);
+
+    letter-spacing: letter-spacing(-4%, "%");
+  }
+}
+
+@mixin title-page-inner-l {
+  @include font-size(303px, 273px);
+
+  font-weight: 400;
+  letter-spacing: letter-spacing(-10%, "%");
+  text-transform: uppercase;
+
+  @include media(fullhd-after) {
+    @include font-size(232px, 209px);
+  }
+
+  @include media(quadhd-after) {
+    @include font-size(200px, 210px);
+  }
+
+  @include media(hd-after) {
+    @include font-size(110px, 99px);
+
+    letter-spacing: letter-spacing(-5%, "%");
+  }
+
+  @include media(tablet-after) {
+    @include font-size(54px, 50px);
+
+    letter-spacing: letter-spacing(-4%, "%");
+  }
+}
+
+@mixin title-section {
+  @include font-size(72px, 65px);
+
+  font-weight: 400;
+  letter-spacing: letter-spacing(-5%, "%");
+  text-transform: uppercase;
+
+  // MEDIA
+
+  @include media(hd-after) {
+    @include font-size(64px, 58px);
+  }
+
+  @include media(tablet-after) {
+    @include font-size(36px, 34px);
+  }
+}
+
+@mixin title-section-accent {
+  @include font-size(96px, 86px);
+
+  font-weight: 500;
+  letter-spacing: letter-spacing(-8%, "%");
+
+  // MEDIA
+  // @include media(fullhd-before) {
+  //   font-size: size(96);
+  //   line-height: size(86);
+  // }
+
+  @include media(tablet-after) {
+    @include font-size(36px, 32px);
+  }
+}
+
+@mixin title-section-xl {
+  @include font-size(64px, 58px);
+
+  font-weight: 400;
+  letter-spacing: letter-spacing(-5%, "%");
+}
+
+@mixin title-section-l {
+  @include font-size(56px, 50px);
+
+  font-weight: 400;
+  letter-spacing: letter-spacing(-5%, "%");
+}
+
+@mixin title-section-m {
+  @include font-size(36px, 34px);
+
+  font-weight: 400;
+  letter-spacing: letter-spacing(-4%, "%");
+}
+
+@mixin title-section-m-small {
+  @include font-size(32px);
+
+  font-weight: 400;
+  letter-spacing: letter-spacing(-4%, "%");
+}
+
+@mixin block-small {
+  @include font-size(40px, 36px);
+
+  font-weight: 400;
+  letter-spacing: letter-spacing(-4%, "%");
+
+  // MEDIA
+  // @include media(fullhd-before) {
+  //   font-size: size(40);
+  //   line-height: size(36);
+  // }
+
+  @include media(tablet-after) {
+    @include font-size(24px, 26px);
+
+    letter-spacing: letter-spacing(-2%, '%');
+  }
+}
+
+@mixin block-accent {
+  @include font-size(24px, 22px);
+
+  font-weight: 600;
+  letter-spacing: letter-spacing(-4%, "%");
+
+  // MEDIA
+  @include media(fullhd-before) {
+    font-size: size(24);
+    line-height: size(22);
+  }
+
+  @include media(tablet-after) {
+    @include font-size(16px, 14px);
+  }
+}
+
+@mixin block {
+  @include font-size(16px, 21px);
+
+  font-weight: 500;
+  letter-spacing: letter-spacing(-2%, "%");
+
+  // MEDIA
+  // @include media(fullhd-before) {
+  //   font-size: size(16);
+  //   line-height: size(20);
+  // }
+}
+
+@mixin heading-block {
+  @include font-size(24px, 24px);
+
+  font-weight: 500;
+  letter-spacing: letter-spacing(-4%, "%");
+}
+
+
+// ===[ TEXTS ]===
+@mixin text-body-xxl-fixed {
+  @include font-size(96px, 86px);
+
+  font-weight: 400;
+  letter-spacing: letter-spacing(-5%, "%");
+}
+
+@mixin text-body-xl-fix {
+  @include font-size(84px, 76px);
+
+  font-weight: 400;
+  letter-spacing: letter-spacing(-5%, "%");
+}
+
+@mixin text-body-primary {
+  @include font-size(18px, 22px);
+
+  font-weight: 500;
+
+  @include media(hd-after) {
+    @include font-size(15px, 17px);
+  }
+
+  @include media(tablet-after) {
+    @include font-size(14px, 17px);
+  }
+
+  // // MEDIA
+  // @include media(fullhd-before) {
+  //   font-size: size(18);
+  //   line-height: size(22);
+  // }
+}
+
+@mixin text-body-primary-2 {
+  @include font-size(18px, 22px);
+
+  font-weight: 500;
+
+  @include media(tablet-after) {
+    @include font-size(14px, 17px);
+  }
+}
+
+@mixin text-body-primary-fix {
+  @include font-size(18px, 22px);
+
+  font-weight: 500;
+}
+
+@mixin text-body-secondary {
+  @include font-size(15px, 18px);
+
+  font-weight: 500;
+
+  // MEDIA
+  // @include media(fullhd-before) {
+  //   font-size: size(15);
+  //   line-height: size(18);
+  // }
+}
+
+@mixin text-body-caption-l {
+  @include font-size(14px, 17px);
+
+  font-family: $font-primary;
+  font-weight: 500;
+}
+
+@mixin text-body-caption {
+  @include font-size(13px, 16px);
+
+  font-family: $font-primary;
+  font-weight: 600;
+  letter-spacing: letter-spacing(2%, "%");
+}
+
+@mixin text-body-caption-sm {
+  @include font-size(11px, 12px);
+
+  font-family: $font-primary;
+  font-weight: 600;
+  letter-spacing: letter-spacing(4%, "%");
+}
+
+
+// ===[ CAPTIONS ]===
+@mixin text-caption-xxxl {
+  @include font-size(48px, 34px);
+
+  font-family: $font-primary;
+  font-weight: 400;
+  letter-spacing: letter-spacing(-8%, "%");
+}
+
+@mixin text-caption-xxl {
+  @include font-size(24px, 17px);
+
+  font-family: $font-primary;
+  font-weight: 500;
+  letter-spacing: letter-spacing(-6%, "%");
+}
+
+@mixin text-caption-xxl-oneheight {
+  @include font-size(24px);
+
+  font-family: $font-primary;
+  font-weight: 500;
+  letter-spacing: letter-spacing(-4%, "%");
+}
+
+@mixin text-caption-xl {
+  @include font-size(20px, 26px);
+
+  font-family: $font-primary;
+  font-weight: 500;
+  letter-spacing: letter-spacing(1%, "%");
+}
+
+@mixin text-caption-m {
+  @include font-size(18px, 23px);
+
+  font-family: $font-primary;
+  font-weight: 500;
+  letter-spacing: letter-spacing(2%, "%");
+}
+
+@mixin text-caption-m-small {
+  @include font-size(16px, 21px);
+
+  font-family: $font-primary;
+  font-weight: 500;
+  letter-spacing: letter-spacing(2%, "%");
+}
+
+@mixin text-caption-s {
+  @include font-size(13px, 16px);
+
+  font-family: $font-primary;
+  font-weight: 600;
+  letter-spacing: letter-spacing(2%, "%");
+}
+
+@mixin text-caption-xs {
+  @include font-size(11px, 12px);
+
+  font-family: $font-primary;
+  font-weight: 600;
+  letter-spacing: letter-spacing(4%, "%");
+}
+
+
+// ===[ BUTTONS ]===
+@mixin text-btn-round {
+  @include font-size(18px, 21px);
+
+  font-family: $font-primary;
+  font-weight: 600;
+  letter-spacing: letter-spacing(2%, "%");
+
+  @include media(tablet-after) {
+    @include font-size(13px, 13px);
+  }
+}
+
+@mixin text-btn {
+  @include font-size(13px, 13px);
+
+  font-family: $font-primary;
+  font-weight: 600;
+  letter-spacing: letter-spacing(2%, "%");
+}
+
+@mixin text-btn-caption {
+  @include font-size(13px, 13px);
+
+  font-family: $font-primary;
+  font-weight: 600;
+  letter-spacing: letter-spacing(2%, "%");
+
+  // MEDIA
+  // @include media(fullhd-before) {
+  //   font-size: size(13);
+  //   line-height: size(13);
+  // }
+
+  @include media(tablet-after) {
+    @include font-size(13px, 15px);
+  }
+}
+
+@mixin text-btn-l {
+  @include font-size(18px, 22px);
+
+  font-family: $font-primary;
+  font-weight: 600;
+  letter-spacing: letter-spacing(2%, "%");
+}
+
+// всего скорее аналог text-btn
+@mixin text-btn-m {
+  @include font-size(13px, 13px);
+
+  font-family: $font-primary;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+@mixin text-btn-s {
+  @include font-size(11px, 13px);
+
+  font-family: $font-primary;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+// ===[ LINKS ]===
+@mixin text-link-l {
+  @include font-size(20px);
+
+  font-family: $font-primary;
+  font-weight: 500;
+  letter-spacing: letter-spacing(-4%, "%");
+}
+
+@mixin text-link-s {
+  @include font-size(13px);
+
+  font-family: $font-primary;
+  font-weight: 500;
+  letter-spacing: letter-spacing(-4%, "%");
+}
+
+// ===[ TABS ]===
+@mixin tabs {
+  @include font-size(24px, 24px);
+
+  font-weight: 500;
+  letter-spacing: letter-spacing(-4%, "%");
+
+  @include media(hd-after) {
+    @include font-size(20px, 20px);
+  }
+}
+
+@mixin card-title {
+  @include font-size(20px, 20px);
+
+  font-weight: 500;
+  letter-spacing: letter-spacing(-4%, "%");
+}

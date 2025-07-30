@@ -1,0 +1,18 @@
+{
+  "heading": {
+    "default": "<span class='section-people__heading-icon'>Коллекционеры</span> <span>искренних эмоций</span>",
+    "mobile": "<span>Коллекционеры</span> <span>искренних</span> <span class='section-people__heading-icon'>эмоций</span>"
+  },
+  "title": {
+    "default": "<span>More Yuva — не просто место</span> <span>для жизни, это теплое <span class='underline underline--second-1'>сообщество</span> людей</span> <span>с близкими взглядами и ценностями.</span> <span>Это отражение внутреннего мира каждого,</span> <span>кто ценит качественный отдых, душевное</span> <span>равновесие и искренние <span class='underline underline--second-2'>впечатления</span>.</span>",
+    "mobile": "<span>More Yuva — это не просто место для</span> <span>жизни, а <span class='underline underline--second-1'>сообщество</span> людей</span> <span>со схожими ценностями. Здесь</span> <span>каждый найдёт отражение своих</span> <span>взглядов, душевное равновесие и</span> <span>искренние <span class='underline underline--second-2'>впечатления</span>. Мы создаём</span> <span>пространство, где каждая деталь</span> <span>имеет значение, а каждый момент</span> <span>наполнен смыслом.</span>"
+  },
+  "text": {
+    "default": "<span>Настоящий комфорт не кричит о себе, он ощущается на</span> <span>интуитивном уровне. Мы создаем пространство для людей,</span> <span>где каждая деталь имеет значение, каждое решение</span> <span>естественно, а каждый момент наполнен смыслом.</span>",
+    "mobile": false
+  },
+  "subtitle": {
+    "default": "<span>короткое видео</span> <span>о настоящей жизни</span> <span>в крыму</span>",
+    "mobile": "<span>Вдохновение вокруг</span>"
+  }
+}

@@ -1,0 +1,25 @@
+.list-contacts {
+  &:not(:last-child) {
+    margin-bottom: rem(16);
+  }
+
+  &__title {
+    @include text-caption-s;
+
+    text-transform: uppercase;
+
+    &:not(:last-child) {
+      margin-bottom: rem(4);
+    }
+  }
+
+  &__list {
+    @include text-caption-s;
+
+    display: flex;
+    flex-direction: column;
+    gap: rem(8);
+    align-items: end;
+    padding: rem(2) 0;
+  }
+}

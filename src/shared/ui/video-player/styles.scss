@@ -1,0 +1,38 @@
+.video-player {
+  color: var(--txt-tertiary);
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+
+  &.is-error {
+    pointer-events: none;
+  }
+
+  &__video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity var(--trans-base), color var(--trans-base);
+  }
+
+  &__error {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  &.is-playing &__btn {
+    opacity: 0;
+    pointer-events: none;
+  }
+}

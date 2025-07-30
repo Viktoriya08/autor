@@ -1,0 +1,113 @@
+.section-callback {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  min-height: rem(1026);
+  color: var(--txt-primary-invert);
+  border-block-start: 1px solid var(--bd-tertiary-trans-16);
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: 1;
+    display: block;
+    width: rem(1);
+    height: 100%;
+    background-color: var(--bd-tertiary-trans-16);
+  }
+
+  &__text-box {
+    position: relative;
+    isolation: isolate;
+    padding: rem(140) var(--padding-wrapper);
+  }
+
+  &__decor {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-block-end: rem(120);
+  }
+
+  &__head {
+    display: grid;
+    row-gap: rem(24);
+    width: 100%;
+    max-width: rem(380);
+  }
+
+  &__title {
+    @include title-section-l;
+
+    text-transform: uppercase;
+  }
+
+  &__descr {
+    @include text-body-primary;
+  }
+
+  &__form-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--padding-wrapper);
+  }
+
+  // ===[ MEDIA ]===
+  @include media(hd-after) {
+    grid-template-columns: 1fr;
+    grid-auto-rows: min-content;
+    row-gap: rem(32);
+    min-height: max(100dvh, rem(1152));
+    padding: rem(100) rem(98);
+
+    &::before {
+      display: none;
+    }
+
+    &__text-box,
+    &__form-box {
+      display: contents;
+    }
+
+    &__decor {
+      margin-block-end: 0;
+    }
+
+    &__head {
+      margin-inline: auto;
+      text-align: center;
+    }
+
+    &__title {
+      @include title-section-xl;
+    }
+  }
+
+  @include media(tablet-after) {
+    row-gap: rem(40);
+    min-height: max(100dvh, rem(808));
+    padding: rem(64) var(--padding-wrapper);
+
+    &__decor {
+      bottom: rem(-44);
+    }
+
+    &__head {
+      margin-inline: 0;
+      text-align: start;
+    }
+
+    &__title {
+      @include title-section-m;
+    }
+  }
+}

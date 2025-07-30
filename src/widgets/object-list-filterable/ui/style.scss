@@ -1,0 +1,50 @@
+.object-list-filterable-empty {
+  $bg-image-gap: rem(64);
+
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: rem(24);
+  width: 100%;
+  height: 100%;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    display: block;
+    background-image: url('/image/bg/birds.svg'), url('/image/bg/bird.svg');
+    background-repeat: no-repeat;
+    background-size: 55%, 25%;
+    background-position:
+      top $bg-image-gap left $bg-image-gap,
+      bottom $bg-image-gap right $bg-image-gap;
+  }
+
+  &__text {
+    @include heading-block;
+    @include font-size(48px);
+
+    padding: rem(24) rem(48);
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--white);
+    background-color: var(--page-primary-color, var(--primary-dark));
+    border-radius: 1.75em / 1.25em;
+  }
+
+  // ===[ MEDIA ]===
+  @include media(hd-after) {
+    min-height: 50dvh;
+
+    &__text {
+      @include font-size(24px);
+
+      border-radius: 2.75em / 2.25em;
+    }
+  }
+}

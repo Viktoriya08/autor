@@ -1,0 +1,21 @@
+.list-share {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: start;
+  row-gap: rem(8);
+
+  &--modal {
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem(40);
+  }
+
+  @include media(tablet-after) {
+    &--modal {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      gap: rem(16);
+    }
+  }
+}

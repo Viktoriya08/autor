@@ -1,0 +1,20 @@
+.chips {
+  @include text-btn-s;
+
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  border-radius: rem(96);
+  padding: rem(6) rem(10) rem(6) rem(6);
+  background-color: var(--bg-internal-surface-pastel-light);
+  color: var(--txt-primary-steel);
+  text-transform: uppercase;
+  user-select: none
+}
+
+.icon {
+  @include square(rem(16));
+
+  display: flex;
+  margin-right: rem(4);
+}

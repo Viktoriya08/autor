@@ -1,0 +1,44 @@
+.ui-date {
+  display: flex;
+  align-items: end;
+  column-gap: rem(8);
+
+  // color: var(--page-primary-color, var(--txt-primary-invert));
+
+  &__text {
+    @include text-caption-xs;
+
+    text-transform: uppercase;
+  }
+
+  &__num {
+    @include text-caption-xxxl;
+
+    vertical-align: baseline;
+  }
+
+  &--primary &__num {
+    @include text-body-xxl-fixed;
+  }
+
+  &--primary &__text {
+    @include text-body-caption;
+
+    line-height: 2;
+  }
+
+  // ===[ MEDIA ]===
+  @include media(hd-after) {
+    &--primary &__num {
+      @include text-body-xl-fix;
+    }
+  }
+
+  @include media(tablet-after) {
+    &--primary &__num {
+      @include text-caption-xxxl;
+
+      line-height: 1;
+    }
+  }
+}

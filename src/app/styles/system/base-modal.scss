@@ -1,0 +1,147 @@
+@use "./global/vars" as *;
+@use "./global/functions" as *;
+@use "./global/mix" as *;
+@use "./global/typography" as *;
+
+.modal-base {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  z-index: var(--z-modal);
+  -webkit-overflow-scrolling: touch;
+
+  &__body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: rem(40);
+
+    &--right {
+      align-items: end;
+      padding: 0;
+    }
+  }
+
+  &__content-box {
+    padding-right: rem(25);
+    width: 49%;
+    height: 100%;
+    background-color: var(--bg-page-yellow);
+    color: var(--primary-dark);
+  }
+
+  &__content {
+    // @include v-scroll;
+    @include hide-scroll;
+
+    scroll-behavior: smooth;
+    overflow-y: auto;
+    padding: rem(50);
+    padding-right: rem(24);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(0 0 0 / 0.5);
+    pointer-events: none;
+  }
+
+  &__close {
+    position: absolute;
+    top: rem(48);
+    right: rem(48);
+    z-index: var(--z-modal);
+  }
+
+  &--full &__body {
+    padding: 0;
+  }
+
+  &--gallery &__body {
+    padding: 0;
+    display: grid;
+  }
+
+  &--gallery &__content {
+    padding: 0;
+    height: auto;
+    overflow: hidden;
+  }
+
+  &--size-l &__content-box {
+    width: 90%;
+    max-width: rem(1294);
+  }
+
+  @include media(hd-after) {
+    &__content {
+      padding: rem(32);
+      padding-right: rem(20);
+    }
+
+    &__content-box {
+      width: 91%;
+      padding-right: rem(12);
+    }
+
+    &__close {
+      top: rem(24);
+      right: rem(24);
+    }
+
+    &--size-l &__content-box {
+      width: 73%;
+    }
+  }
+
+  @include media(tablet-after) {
+    &__content-box {
+      padding-right: calc(var(--padding-wrapper) / 2);
+      width: 100%;
+    }
+
+    &__content {
+      width: 100%;
+      padding: var(--padding-wrapper);
+      padding-right: calc(var(--padding-wrapper) / 2);
+      padding-bottom: rem(80);
+    }
+
+    &__close {
+      top: rem(16);
+      right: rem(16);
+    }
+
+    &--size-l &__content-box {
+      width: 100%;
+    }
+  }
+}
+
+.default-enter-active,
+.default-leave-active {
+  transition: opacity 0.1s cubic-bezier(.31, .48, .9, .59), transform 0.3s;
+}
+
+.default-enter-from,
+.default-leave-to {
+  opacity: 0;
+  transform: scale(1.1);
+}

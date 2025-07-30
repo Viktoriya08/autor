@@ -1,0 +1,45 @@
+.custom-cursor {
+  @include text-caption-xs;
+  color: var(--txt-primary-steel);
+  text-transform: uppercase;
+  width: rem(64);
+  height: rem(64);
+  border-radius: 50%;
+  border: 1px solid var(--txt-primary-steel);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity var(--trans-base), left 1s cubic-bezier(0.165, 0.84, 0.44, 1), top 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+  &.show {
+    opacity: 1;
+  }
+
+  &__text {
+    padding-left: rem(12);
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    white-space: nowrap;
+    display: block;
+  }
+
+  @include media(hd-after) {
+    width: fit-content;
+    height: fit-content;
+    border: none;
+    position: static;
+    opacity: 1;
+    margin: 0 auto;
+    text-align: center;
+    padding: rem(20) 0;
+
+    &__text {
+      padding-left: 0;
+      position: static;
+      transform: translateY(0%);
+    }
+  }
+}

@@ -1,0 +1,146 @@
+.steps {
+  padding: rem(140) 0 rem(120);
+  // color: var(--page-primary-color, var(--txt-tertiary));
+  margin-top: var(--padding-decor);
+
+  &__title {
+    @include title-page;
+
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0 auto rem(40);
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: flex-end;
+    counter-reset: list
+  }
+
+  &__text {
+    @include card-title;
+
+    text-transform: uppercase;
+    max-width: 65%;
+  }
+
+  &__item {
+    padding: rem(32);
+    display: flex;
+    flex-direction: column;
+    gap: rem(32);
+    justify-content: space-between;
+    height: rem(628);
+    color: var(--c-dusty-yellow-secondary);
+    background-color: var(--txt-tertiary);
+
+    &::after {
+      @include font-size(120px, 85px);
+
+      content: counters(list, "");
+      counter-increment: list;
+    }
+
+    &:nth-child(1) {
+      height: rem(439);
+      background-color: var(--bg-tile-item-1);
+    }
+
+    &:nth-child(2) {
+      height: rem(502);
+      background-color: var(--bg-tile-item-2);
+    }
+
+    &:nth-child(3) {
+      height: rem(565);
+      background-color: var(--bg-tile-item-3);
+    }
+
+    &:nth-child(4) {
+      background-color: var(--bg-tile-item-4);
+    }
+  }
+
+  @include media(fullhd-after) {
+    &__item {
+      height: rem(460);
+
+      &:nth-child(1) {
+        height: rem(322);
+      }
+
+      &:nth-child(2) {
+        height: rem(368);
+      }
+
+      &:nth-child(3) {
+        height: rem(414);
+      }
+    }
+
+    &__text {
+      max-width: 100%;
+    }
+  }
+
+  @include media(hd-after) {
+    padding: rem(120) 0 rem(100);
+
+    &__list {
+      grid-template-columns: 100%;
+    }
+
+    &__item {
+      height: auto;
+      min-height: rem(280);
+
+      &:nth-child(1) {
+        height: auto;
+        min-height: rem(280);
+      }
+
+      &:nth-child(2) {
+        height: auto;
+        min-height: rem(280);
+      }
+
+      &:nth-child(3) {
+        height: auto;
+        min-height: rem(280);
+      }
+    }
+
+    &__text {
+      max-width: 40%;
+    }
+  }
+
+  @include media(tablet-after) {
+    padding: rem(100) 0;
+
+    &__item {
+      min-height: rem(240);
+
+      &:nth-child(1) {
+        min-height: rem(240);
+      }
+
+      &:nth-child(2) {
+        min-height: rem(240);
+      }
+
+      &:nth-child(3) {
+        min-height: rem(240);
+      }
+
+      &::after {
+        @include font-size(72px, 51px);
+      }
+    }
+
+    &__text {
+      max-width: 85%;
+    }
+  }
+}

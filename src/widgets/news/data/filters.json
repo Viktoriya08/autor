@@ -1,0 +1,38 @@
+[
+  {
+    "key": "nf-all",
+    "name": "Все",
+    "scopedWidgetClassMods": ["is-active"],
+    "attrs": {
+      "aria-pressed": "true",
+      "aria-label": "Отобразить все новости"
+    }
+  },
+
+  {
+    "key": "nf-news",
+    "name": "Новости",
+    "attrs": {
+      "aria-pressed": "false",
+      "aria-label": "Отобразить только «Новости»"
+    }
+  },
+
+  {
+    "key": "nf-promotions",
+    "name": "Акции",
+    "attrs": {
+      "aria-pressed": "false",
+      "aria-label": "Отобразить только «Акции»"
+    }
+  },
+
+  {
+    "key": "nf-awards",
+    "name": "Премии",
+    "attrs": {
+      "aria-pressed": "false",
+      "aria-label": "Отобразить только «Премии»"
+    }
+  }
+]

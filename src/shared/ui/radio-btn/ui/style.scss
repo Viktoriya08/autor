@@ -1,0 +1,92 @@
+.radio-btn {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  border-radius: rem(8);
+  transition: background-color var(--trans-base);
+  min-width: max-content;
+  user-select: none;
+  cursor: pointer;
+
+  &__input {
+    appearance: none;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    pointer-events: none;
+  }
+
+  &__input::before {
+    content: '';
+    border-radius: inherit;
+    transition: transform var(--trans-base);
+    transform: scale(0);
+  }
+
+  &__text {
+    margin-left: rem(4);
+    flex-shrink: 0;
+    pointer-events: none;
+  }
+
+  // size
+  &--m {
+    @include text-btn-s;
+
+    text-transform: uppercase;
+    padding: rem(8) rem(12) rem(8) rem(8);
+  }
+
+  &--l {
+    @include text-btn-s;
+
+    text-transform: uppercase;
+    padding: rem(12) rem(0);
+  }
+
+  &--m &__input,
+  &--l &__input {
+    @include square(rem(16));
+  }
+
+  &--m &__input::before,
+  &--l &__input::before {
+    @include square(rem(10));
+  }
+
+  // style
+  &--blue {
+    background-color: var(--bg-internal-surface-pastel-light);
+    color: var(--txt-primary-steel);
+  }
+
+  &--transparent {
+    background-color: transparent;
+    color: var(--txt-primary-steel);
+  }
+
+  &--blue &__input,
+  &--transparent &__input {
+    background-color: var(--bg-internal-page-pastel);
+  }
+
+  &--blue &__input::before,
+  &--transparent &__input::before {
+    background-color: currentcolor;
+  }
+
+  // state
+  @include media(hover) {
+    &--blue:hover {
+      background-color: var(--bg-internal-surface-dusty-white);
+    }
+  }
+
+  &__input:checked::before {
+    transform: scale(1);
+  }
+}

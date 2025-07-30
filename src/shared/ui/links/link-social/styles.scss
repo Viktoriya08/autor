@@ -1,0 +1,97 @@
+.link-social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: rem(40);
+  height: rem(40);
+  border-radius: 50%;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: var(--btn-tertiary-invert);
+  color: var(--btn-bg);
+  transition: background-color var(--trans-base), color var(--trans-base);
+
+  &__icon {
+    @include square(rem(20));
+
+    color: inherit;
+  }
+
+  // states
+  &:active,
+  &.is-active {
+    outline: none;
+    background: var(--btn-bg);
+    color: var(--bg-page-green);
+  }
+
+  &:disabled,
+  &.is-disabled {
+    cursor: default;
+    opacity: 0.32;
+    pointer-events: none;
+  }
+
+  &--color-dark {
+    color: var(--primary-dark);
+    background-color: var(--primary-invert-pressed);
+
+    &:active,
+    &.is-active {
+      outline: none;
+      background: var(--primary-invert);
+      color: var(--bg-page-green);
+    }
+  }
+
+  &--color-brown {
+    background: var(--primary-brown);
+    color: var(--txt-tertiary);
+
+    &:active,
+    &.is-active {
+      outline: none;
+      background: var(--txt-tertiary);
+      color: var(--primary-brown);
+    }
+  }
+
+  &--color-white {
+    color: var(--page-primary-color, var(--txt-primary-invert));
+    background-color: var(--btn-bg-white);
+
+    &:active,
+    &.is-active {
+      outline: none;
+      background: var(--white);
+      color: var(--txt-primary-invert);
+    }
+  }
+
+  @include media(hover) {
+    &:not([class*="--color"]):where(:hover, :focus-visible) {
+      outline: none;
+      cursor: pointer;
+      background: var(--primary-invert);
+      color: var(--bg-page-green);
+    }
+
+    &--color-dark:where(:hover, :focus-visible) {
+      outline: none;
+      cursor: pointer;
+      background: var(--primary-invert);
+    }
+
+    &--color-brown:where(:hover, :focus-visible) {
+      outline: none;
+      cursor: pointer;
+      background: var(--txt-tertiary);
+      color: var(--primary-brown);
+    }
+
+    &--color-white:where(:hover, :focus-visible) {
+      background-color: var(--btn-bg-hover-yellow);
+      color: var(--txt-primary-invert);
+    }
+  }
+}

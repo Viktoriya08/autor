@@ -1,0 +1,57 @@
+.radio {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+
+  &__input {
+    appearance: none;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__input::before {
+    @include square(62.5%);
+
+    content: '';
+    border-radius: inherit;
+    transition: transform var(--trans-base);
+    transform: scale(0);
+  }
+
+  &__text {
+    margin-left: rem(4);
+  }
+
+  // size
+  &--m {
+    @include text-btn-s;
+
+    text-transform: uppercase;
+  }
+
+  &--m &__input {
+    @include square(rem(16));
+  }
+
+  // style
+  &--blue {
+    color: var(--txt-primary-steel);
+  }
+
+  &--blue &__input {
+    background-color: var(--bg-internal-page-pastel);
+  }
+
+  &--blue &__input::before {
+    background-color: currentcolor;
+  }
+
+  // state
+  &__input:checked::before {
+    transform: scale(1);
+  }
+}
